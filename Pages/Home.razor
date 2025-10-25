@@ -1,0 +1,24 @@
+﻿@page "/"
+@page "/welcome"
+
+@inject Blazor.Analytics.IAnalytics Analytics
+
+
+<PageTitle>Elena Kokline</PageTitle>
+
+<MudHidden Breakpoint="Breakpoint.MdAndDown">
+    <Wide></Wide>
+</MudHidden>
+
+<MudHidden Breakpoint="Breakpoint.LgAndUp">
+    <Mobile></Mobile>
+</MudHidden>
+
+@code {
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+
+        Analytics.TrackEvent("page", new { value = "Elena Kokline" });
+    }
+}

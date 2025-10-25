@@ -1,0 +1,26 @@
+﻿<MudDialog>
+    <DialogContent>
+        <MudStack>
+            <MudButton @onclick="() => Submit()" Style="min-height: 800px">
+                <MudImage Src="@GetImageFile()" Style="max-width: 100vw; max-height: 88vh" Class="m-auto"></MudImage>
+            </MudButton>
+        </MudStack>
+    </DialogContent>
+</MudDialog>
+
+@code {
+    [CascadingParameter] private IMudDialogInstance MudDialog { get; set; }
+
+    private void Submit()
+    {
+        MudDialog.Close(DialogResult.Ok(true));
+    }
+
+    [Parameter] public double ImageId { get; set; }
+
+    public string GetImageFile()
+    {
+        return ImageId + ".webp";
+    }
+
+}
