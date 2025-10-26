@@ -1,10 +1,26 @@
 ﻿@page "/"
 @page "/welcome"
+@using Lydia.Components
 
-@inject Blazor.Analytics.IAnalytics Analytics
+@inject IAnalytics Analytics
 
 
 <PageTitle>Elena Kokline</PageTitle>
+
+<MudContainer Class="mt-16">
+    <MudStack>
+        @foreach (var painting in Data.Data.Paintings)
+        {
+            <MudPaper Class="pa-16 ma-2">
+                <MudStack>
+                    <SectionPainting Data="@painting"/>   
+                </MudStack>
+            </MudPaper>
+
+        }
+    </MudStack>
+</MudContainer>
+
 
 <MudHidden Breakpoint="Breakpoint.MdAndDown">
     <Wide></Wide>
