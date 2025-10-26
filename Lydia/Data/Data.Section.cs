@@ -68,6 +68,7 @@ public static partial class Data
         new()
         {
             Order = 11,
+            Key = "mother",
             File = "11.webp",
             Available = true,
             Name = "Maman / Mother",
@@ -82,6 +83,7 @@ public static partial class Data
         new()
         {
             Order = 12,
+            Key = "at-the-end-of-the-island",
             File = "12.webp",
             Available = true,
             Name = "Au bout de l'île / At the end of the island",
@@ -96,6 +98,7 @@ public static partial class Data
         new()
         {
             Order = 13,
+            Key = "friendship",
             File = "13.webp",
             Available = true,
             Name = "Amitié / Friendship",
@@ -110,6 +113,7 @@ public static partial class Data
         new()
         {
             Order = 14,
+            Key = "snowdrops",
             File = "14.webp",
             Available = true,
             Name = "Perce-neige / Snowdrops",
@@ -124,6 +128,7 @@ public static partial class Data
         new()
         {
             Order = 15,
+            Key = "daffodil",
             File = "15.webp",
             Available = true,
             Name = "Jonquille / Daffodil",
@@ -138,6 +143,7 @@ public static partial class Data
         new()
         {
             Order = 16,
+            Key = "the-sunflowers",
             File = "16.webp",
             Available = true,
             Name = "Les tournesols / The sunflowers",
@@ -152,6 +158,7 @@ public static partial class Data
         new()
         {
             Order = 17,
+            Key = "decorative-plate",
             File = "17.webp",
             Available = true,
             Name = "Assiette décorative / Decorative plate",
@@ -164,6 +171,7 @@ public static partial class Data
         new()
         {
             Order = 18,
+            Key = "lithuanien-plate",
             File = "18.webp",
             Available = true,
             Name = "Assiette Lithuanienne / Lithuanien Plate",
@@ -178,6 +186,7 @@ public static partial class Data
         new()
         {
             Order = 19,
+            Key = "three-pansies",
             File = "19.webp",
             Available = true,
             Name = "Trois pensée / Three pansies",
@@ -192,6 +201,7 @@ public static partial class Data
         new()
         {
             Order = 20,
+            Key = "night",
             File = "20.webp",
             Available = true,
             Name = "Nocturne / Night",
@@ -206,6 +216,7 @@ public static partial class Data
         new()
         {
             Order = 21,
+            Key = "young-girl-with-braids",
             File = "21.webp",
             Available = true,
             Name = "Jeune fille aux tresses / Young girl with braids",
@@ -220,6 +231,7 @@ public static partial class Data
         new()
         {
             Order = 22,
+            Key = "koutchoum",
             File = "22.webp",
             Available = true,
             Name = "Koutchoum",
@@ -236,6 +248,7 @@ public static partial class Data
         new()
         {
             Order = 23,
+            Key = "annunciation",
             File = "23.webp",
             Available = true,
             Name = "Annonciation / Annunciation",
@@ -252,6 +265,7 @@ public static partial class Data
         new()
         {
             Order = 24,
+            Key = "andersens-tale",
             File = "24.webp",
             Available = true,
             Name = "Conte d'andersen / Andersen's Tale",
@@ -268,6 +282,7 @@ public static partial class Data
         new()
         {
             Order = 25,
+            Key = "dancers",
             File = "25.webp",
             Available = true,
             Name = "Danseuses / Dancers",
@@ -284,6 +299,7 @@ public static partial class Data
         new()
         {
             Order = 26,
+            Key = "fountain-of-youth",
             File = "26.webp",
             Available = true,
             Name = "Fontaine de jouvence / Fountain of Youth",
@@ -298,6 +314,7 @@ public static partial class Data
         new()
         {
             Order = 27,
+            Key = "quadriga",
             File = "27.webp",
             Available = true,
             Name = "Quadrigue / Quadriga",
@@ -312,6 +329,7 @@ public static partial class Data
         new()
         {
             Order = 28,
+            Key = "maple-leaves",
             File = "28.webp",
             Available = true,
             Name = "Feuilles d'Erable / Maple leaves",
@@ -326,6 +344,7 @@ public static partial class Data
         new()
         {
             Order = 29,
+            Key = "princess-javakha",
             File = "29.webp",
             Available = true,
             Name = "Princesse Javakha / Princess Javakha",
@@ -340,6 +359,7 @@ public static partial class Data
         new()
         {
             Order = 30,
+            Key = "loreley",
             File = "30.webp",
             Available = true,
             Name = "Loreley / Loreley",
@@ -354,6 +374,7 @@ public static partial class Data
         new()
         {
             Order = 31,
+            Key = "hummingbirds",
             File = "31.webp",
             Available = true,
             Name = "Colibris / Hummingbirds",
@@ -368,6 +389,7 @@ public static partial class Data
         new()
         {
             Order = 32,
+            Key = "our-lady-of-perpetual-help",
             File = "32.webp",
             Available = true,
             Name = "Notre-Dame du Perpétuel Secours / Our Lady of Perpetual Help",
