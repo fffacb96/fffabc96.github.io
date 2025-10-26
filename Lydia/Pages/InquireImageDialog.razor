@@ -8,14 +8,25 @@
             <MudButton @onclick="() => Submit()" Style="min-height: 800px">
                 <MudImage Src="@Painting.File" Style="max-width: 100vw; max-height: 88vh" Class="m-auto"></MudImage>
             </MudButton>
-            <MudStack Row="true">
+            <MudStack Row="true" AlignItems="AlignItems.Stretch">
+                <MudItem>
                 <MudText Typo="Typo.h1">@Painting.Name</MudText>
-
+                </MudItem>
                 @if (Painting.Available)
                 {
-                    <MudText Typo="Typo.body1">Available</MudText>
-                    <MudButton @onclick="OpenDialogAsync" EndIcon="@Icons.Material.Filled.QuestionMark">Inquire
+                    <MudSpacer></MudSpacer>
+                    <MudItem>
+                    <MudChip Text="green" Color="Color.Success" Value="@Color.Success">Available</MudChip>
+                    </MudItem>
+                    <MudItem>
+                    <MudButton
+                        @onclick="OpenDialogAsync"
+                        Variant="Variant.Filled"
+                        Color="Color.Primary"
+                        EndIcon="@Icons.Material.Filled.QuestionMark">
+                        Inquire
                     </MudButton>
+                    </MudItem>
                 }
             </MudStack>
         </MudStack>
@@ -46,7 +57,7 @@
             { x => x.Painting, Painting }
         };
 
-        var options = new DialogOptions { FullScreen = true, CloseButton = true, CloseOnEscapeKey = true };
+        var options = new DialogOptions { FullScreen = false, CloseButton = true, CloseOnEscapeKey = true };
 
         return DialogService.ShowAsync<ContactForm>("", parameters, options);
     }

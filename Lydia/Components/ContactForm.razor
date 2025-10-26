@@ -1,32 +1,32 @@
 @using System.ComponentModel.DataAnnotations
 @using Lydia.Data
-<MudDialog>
+<MudDialog Style="min-width: 800px; min-height: 600px" >
     <DialogContent>
 
-        <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+        <EditForm  Model="@model" OnValidSubmit="OnValidSubmit">
             <DataAnnotationsValidator/>
-            <MudGrid>
-                <MudItem xs="12" sm="7">
                     <MudCard>
                         <MudCardContent>
                             <MudTextField Label="Subject" HelperText="Max. 8 characters"
-                                          @bind-Value="model.Subject" For="@(() => model.Subject)"/>
-                            <MudTextField Label="Email" Class="mt-3"
-                                          @bind-Value="model.Email" For="@(() => model.Email)"/>
+                                          @bind-Value="model.Subject" For="@(() => model.Subject)"
+                                           Placeholder="Email subject..."/>
+                            <MudTextField Label="Your Email" Class="mt-3"
+                                          @bind-Value="model.Email" For="@(() => model.Email)"
+                                          Placeholder="Your email..."/>
                             <MudTextField Label="Inquiry" HelperText="Ask about one or more paintings..." Class="mt-3"
                                           @bind-Value="model.Body" For="@(() => model.Body)"
-                                          Lines="5"
+                                          Lines="10"
+                                          Placeholder="Your painting inquiry..."
                             />
                         </MudCardContent>
                         <MudCardActions>
                             <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary"
-                                       Class="ml-auto">Send
+                                       Class="ml-auto"
+                                       EndIcon="@Icons.Material.Filled.Send">
+                                Send
                             </MudButton>
                         </MudCardActions>
                     </MudCard>
-                </MudItem>
-
-            </MudGrid>
         </EditForm>
     </DialogContent>
 </MudDialog>
