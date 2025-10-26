@@ -1,0 +1,85 @@
+﻿@using Lydia.Components
+@using Lydia.Data
+@inject IDialogService DialogService
+
+<MudDialog>
+    <DialogContent>
+        <MudStack>
+            <MudCarousel Class="mud-width-full" Style="height: 96vh"  ShowArrows="true" ShowBullets="false" AutoCycle="false"  EnableSwipeGesture="true" TData="object">
+                @foreach (var painting in Data.Paintings)
+                {
+                    <MudCarouselItem Transition="transition">
+                        <div class="d-flex flex-column flex-column justify-center" style="height:98%;">
+                            <MudImage Src="@painting.File" Style="max-width: 100vw; max-height: 76vh" Class="m-auto"></MudImage>
+                            
+                            <br/>
+                            
+                            <MudStack Row="true">
+                                <MudSpacer></MudSpacer>
+                                <MudItem>
+                                    <MudText Typo="Typo.h1">@painting.Name</MudText>
+                                </MudItem>
+
+                                @if (painting.Available)
+                                {
+                                    <MudSpacer></MudSpacer>
+                                    <MudItem>
+                                        <MudChip Text="green" Color="Color.Success" Value="@Color.Success">Available</MudChip>
+                                    </MudItem>
+                                    <MudItem>
+                                        <MudButton
+                                            @onclick="() => OpenDialogAsync(painting)"
+                                            Variant="Variant.Filled"
+                                            Color="Color.Primary"
+                                            EndIcon="@Icons.Material.Filled.ContactSupport">
+                                            Inquire
+                                        </MudButton>
+                                    </MudItem>
+                                }
+                                <MudSpacer></MudSpacer>
+                            </MudStack>
+                        </div>
+                    </MudCarouselItem>
+                }
+            </MudCarousel>
+        </MudStack>
+    </DialogContent>
+</MudDialog>
+
+
+@code{ 
+    private bool arrows = true;
+    private bool bullets = true;
+    private bool enableSwipeGesture = true;
+    private bool autocycle = true;
+    private Transition transition = Transition.Slide;
+
+    
+    [CascadingParameter] private IMudDialogInstance MudDialog { get; set; }
+
+    private void Submit()
+    {
+        MudDialog.Close(DialogResult.Ok(true));
+    }
+
+    [Parameter] public double ImageId { get; set; }
+    [Parameter] public Painting Painting { get; set; }
+
+    public string GetImageFile()
+    {
+        return ImageId + ".webp";
+    }
+
+
+    private Task OpenDialogAsync(Painting painting)
+    {
+        var parameters = new DialogParameters<ContactForm>
+        {
+            { x => x.Painting, painting }
+        };
+
+        var options = new DialogOptions { FullScreen = false, CloseButton = true, CloseOnEscapeKey = true };
+
+        return DialogService.ShowAsync<ContactForm>("", parameters, options);
+    }
+}

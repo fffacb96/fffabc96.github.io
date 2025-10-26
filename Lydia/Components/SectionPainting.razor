@@ -24,7 +24,7 @@
 
     private Task OpenDialogAsync(double imageId)
     {
-        var parameters = new DialogParameters<InquireImageDialog>
+        var parameters = new DialogParameters<InquireImageCarouselDialog>
         {
             { x => x.ImageId, imageId },
             { x => x.Painting, Painting }
@@ -32,7 +32,7 @@
 
         var options = new DialogOptions { FullScreen = true, CloseButton = true, CloseOnEscapeKey = true };
 
-        return DialogService.ShowAsync<InquireImageDialog>("", parameters, options);
+        return DialogService.ShowAsync<InquireImageCarouselDialog>("", parameters, options);
     }
 
 }
