@@ -8,20 +8,6 @@
 
 <PageTitle>Elena Kokline</PageTitle>
 
-<MudContainer Class="mt-16">
-    <MudStack>
-        @foreach (var painting in Data.Paintings)
-        {
-            <MudPaper Class="pa-16 ma-2">
-                <MudStack>
-                    <SectionPainting Painting="@painting"/>
-                </MudStack>
-            </MudPaper>
-        }
-    </MudStack>
-</MudContainer>
-
-
 <MudHidden Breakpoint="Breakpoint.MdAndDown">
     <Wide></Wide>
 </MudHidden>
@@ -39,4 +25,21 @@
         Analytics.TrackEvent("page", new { value = "Elena Kokline" });
     }
 
+    /**
+     * 
+<MudContainer Class="mt-16">
+    <MudStack>
+        @foreach (var painting in Data.Paintings)
+        {
+            <MudPaper Class="pa-16 ma-2">
+                <MudStack>
+                    <SectionPainting Painting="@painting"/>
+                </MudStack>
+            </MudPaper>
+        }
+    </MudStack>
+</MudContainer>
+
+
+     */
 }

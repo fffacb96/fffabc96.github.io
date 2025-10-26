@@ -1,11 +1,5 @@
 namespace Lydia.Data;
 
-public static class PaintingKeys
-{
-    public static string GrowsButDoesNotAge = nameof(GrowsButDoesNotAge);
-    public static string MotherTheFlourshingPalmOfOldage = nameof(MotherTheFlourshingPalmOfOldage);
-}
-
 public class Section
 {
     public required int Order { get; set; }
@@ -29,7 +23,7 @@ public static partial class Data
         new()
         {
             Order = 8,
-            Key = PaintingKeys.GrowsButDoesNotAge,
+            Key = "grows-but-does-not-age",
             Available = true,
             File = "8.webp",
             Name = "Grandit, mais ne viellit pas / Grows But Does Not Age",
@@ -44,7 +38,7 @@ public static partial class Data
         new()
         {
             Order = 9,
-            Key = PaintingKeys.MotherTheFlourshingPalmOfOldage,
+            Key = "mother-the-flourishing-palm-of-old-age",
             File = "9.webp",
             Available = true,
             Name = "Mère la palme florissante de la vieillesse / Mother the flourishing palm of old age",
@@ -59,6 +53,7 @@ public static partial class Data
         new()
         {
             Order = 10,
+            Key = "tulip",
             File = "10.webp",
             Available = true,
             Name = "Tulipe / Tulip",
