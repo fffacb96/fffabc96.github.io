@@ -1,0 +1,55 @@
+﻿@using Lydia.Components
+@using Lydia.Data
+@inject IDialogService DialogService
+
+<MudDialog>
+    <DialogContent>
+        <MudStack>
+            <MudButton @onclick="() => Submit()" Style="min-height: 800px">
+                <MudImage Src="@Painting.File" Style="max-width: 100vw; max-height: 88vh" Class="m-auto"></MudImage>
+            </MudButton>
+            <MudStack Row="true">
+                <MudText Typo="Typo.h1">@Painting.Name</MudText>
+
+                @if (Painting.Available)
+                {
+                    <MudText Typo="Typo.body1">Available</MudText>
+                    <MudButton @onclick="OpenDialogAsync" EndIcon="@Icons.Material.Filled.QuestionMark">Inquire
+                    </MudButton>
+                }
+            </MudStack>
+        </MudStack>
+    </DialogContent>
+</MudDialog>
+
+@code {
+    [CascadingParameter] private IMudDialogInstance MudDialog { get; set; }
+
+    private void Submit()
+    {
+        MudDialog.Close(DialogResult.Ok(true));
+    }
+
+    [Parameter] public double ImageId { get; set; }
+    [Parameter] public Painting Painting { get; set; }
+
+    public string GetImageFile()
+    {
+        return ImageId + ".webp";
+    }
+
+
+    private Task OpenDialogAsync()
+    {
+        var parameters = new DialogParameters<ContactForm>
+        {
+            { x => x.Painting, Painting }
+        };
+
+        var options = new DialogOptions { FullScreen = true, CloseButton = true, CloseOnEscapeKey = true };
+
+        return DialogService.ShowAsync<ContactForm>("", parameters, options);
+    }
+
+
+}

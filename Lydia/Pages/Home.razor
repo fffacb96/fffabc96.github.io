@@ -1,6 +1,7 @@
 ﻿@page "/"
 @page "/welcome"
 @using Lydia.Components
+@using Lydia.Data
 
 @inject IAnalytics Analytics
 
@@ -9,14 +10,13 @@
 
 <MudContainer Class="mt-16">
     <MudStack>
-        @foreach (var painting in Data.Data.Paintings)
+        @foreach (var painting in Data.Paintings)
         {
             <MudPaper Class="pa-16 ma-2">
                 <MudStack>
-                    <SectionPainting Data="@painting"/>   
+                    <SectionPainting Painting="@painting"/>
                 </MudStack>
             </MudPaper>
-
         }
     </MudStack>
 </MudContainer>
@@ -31,10 +31,12 @@
 </MudHidden>
 
 @code {
+
     protected override void OnAfterRender(bool firstRender)
     {
         base.OnAfterRender(firstRender);
 
         Analytics.TrackEvent("page", new { value = "Elena Kokline" });
     }
+
 }

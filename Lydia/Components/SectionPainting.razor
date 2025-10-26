@@ -4,34 +4,35 @@
 @inject IDialogService DialogService
 
 <MudButton @onclick="() => OpenDialogAsync(8)">
-    <MudImage loading="lazy" Src="@Data.File" Style="max-width: 50%" Class="m-auto"></MudImage>
+    <MudImage loading="lazy" Src="@Painting.File" Style="max-width: 50%" Class="m-auto"></MudImage>
 </MudButton>
 <MudText Typo="Typo.subtitle1">
-    @Data.Size
+    @Painting.Size
 </MudText>
 
 <MudText Typo="Typo.h2">
-    @Data.Name
+    @Painting.Name
 </MudText>
 
 <MudText Typo="Typo.body1">
-    @((MarkupString)Markdown.ToHtml(Data.Descriptions))
+    @((MarkupString)Markdown.ToHtml(Painting.Descriptions))
 </MudText>
 
 @code {
 
-    [Parameter] public Painting Data { get; set; }
+    [Parameter] public Painting Painting { get; set; }
 
     private Task OpenDialogAsync(double imageId)
     {
-        var parameters = new DialogParameters<ImageDialog>
+        var parameters = new DialogParameters<InquireImageDialog>
         {
-            { x => x.ImageId, imageId }
+            { x => x.ImageId, imageId },
+            { x => x.Painting, Painting }
         };
 
         var options = new DialogOptions { FullScreen = true, CloseButton = true, CloseOnEscapeKey = true };
 
-        return DialogService.ShowAsync<ImageDialog>("", parameters, options);
+        return DialogService.ShowAsync<InquireImageDialog>("", parameters, options);
     }
 
 }

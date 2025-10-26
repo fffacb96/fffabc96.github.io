@@ -1,0 +1,70 @@
+@using System.ComponentModel.DataAnnotations
+@using Lydia.Data
+<MudDialog>
+    <DialogContent>
+
+        <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
+            <DataAnnotationsValidator/>
+            <MudGrid>
+                <MudItem xs="12" sm="7">
+                    <MudCard>
+                        <MudCardContent>
+                            <MudTextField Label="Subject" HelperText="Max. 8 characters"
+                                          @bind-Value="model.Subject" For="@(() => model.Subject)"/>
+                            <MudTextField Label="Email" Class="mt-3"
+                                          @bind-Value="model.Email" For="@(() => model.Email)"/>
+                            <MudTextField Label="Inquiry" HelperText="Ask about one or more paintings..." Class="mt-3"
+                                          @bind-Value="model.Body" For="@(() => model.Body)"
+                                          Lines="5"
+                            />
+                        </MudCardContent>
+                        <MudCardActions>
+                            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary"
+                                       Class="ml-auto">Send
+                            </MudButton>
+                        </MudCardActions>
+                    </MudCard>
+                </MudItem>
+
+            </MudGrid>
+        </EditForm>
+    </DialogContent>
+</MudDialog>
+
+
+@code {
+
+    [Parameter] public Painting Painting { get; set; }
+
+    readonly RegisterAccountForm model = new();
+    bool success;
+
+    public class RegisterAccountForm
+    {
+        [Required]
+        [StringLength(12000, ErrorMessage = "Subject required", MinimumLength = 1)]
+        public string Subject { get; set; }
+
+        [Required] [EmailAddress] public string Email { get; set; }
+
+        [Required]
+        [StringLength(12000, ErrorMessage = "Needed email body.", MinimumLength = 4)]
+        public string Body { get; set; }
+    }
+
+
+    protected override void OnInitialized()
+    {
+        model.Subject = "Art Inquiry";
+        model.Body = $"Hello Lydia, \n\nI wish to inquire about painting(s): \"{Painting.Name}\"... \n\nIn the Elena Kokline collection.";
+
+        base.OnInitialized();
+    }
+
+    private void OnValidSubmit(EditContext context)
+    {
+        success = true;
+        StateHasChanged();
+    }
+
+}
