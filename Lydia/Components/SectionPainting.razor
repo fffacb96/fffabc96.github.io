@@ -32,7 +32,7 @@
 
         var options = new DialogOptions { FullScreen = true, CloseButton = true, CloseOnEscapeKey = true };
 
-        var painting = Data.Paintings.First(a => a.Order == Painting.Order + 8);
+        var painting = Data.Paintings.First(a => a.Order == Painting.Order);
         
         await JS.InvokeVoidAsync("urlHelper.setUrl", $"/{painting.Key}");
         
