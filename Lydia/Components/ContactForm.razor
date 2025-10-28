@@ -1,32 +1,32 @@
 @using System.ComponentModel.DataAnnotations
 @using Lydia.Data
-<MudDialog Style="min-width: 800px; min-height: 600px" >
+<MudDialog Style="min-width: 800px; min-height: 600px">
     <DialogContent>
 
-        <EditForm  Model="@model" OnValidSubmit="OnValidSubmit">
+        <EditForm Model="@model" OnValidSubmit="OnValidSubmit">
             <DataAnnotationsValidator/>
-                    <MudCard>
-                        <MudCardContent>
-                            <MudTextField Label="Subject" HelperText="Max. 8 characters"
-                                          @bind-Value="model.Subject" For="@(() => model.Subject)"
-                                           Placeholder="Email subject..."/>
-                            <MudTextField Label="Your Email" Class="mt-3"
-                                          @bind-Value="model.Email" For="@(() => model.Email)"
-                                          Placeholder="Your email..."/>
-                            <MudTextField Label="Inquiry" HelperText="Ask about one or more paintings..." Class="mt-3"
-                                          @bind-Value="model.Body" For="@(() => model.Body)"
-                                          Lines="10"
-                                          Placeholder="Your painting inquiry..."
-                            />
-                        </MudCardContent>
-                        <MudCardActions>
-                            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary"
-                                       Class="ml-auto"
-                                       EndIcon="@Icons.Material.Filled.Send">
-                                Send
-                            </MudButton>
-                        </MudCardActions>
-                    </MudCard>
+            <MudCard>
+                <MudCardContent>
+                    <MudTextField Label="Subject" HelperText="Max. 8 characters"
+                                  @bind-Value="model.Subject" For="@(() => model.Subject)"
+                                  Placeholder="Email subject..."/>
+                    <MudTextField Label="Your Email" Class="mt-3"
+                                  @bind-Value="model.Email" For="@(() => model.Email)"
+                                  Placeholder="Your email..."/>
+                    <MudTextField Label="Inquiry" HelperText="Ask about one or more paintings..." Class="mt-3"
+                                  @bind-Value="model.Body" For="@(() => model.Body)"
+                                  Lines="10"
+                                  Placeholder="Your painting inquiry..."
+                    />
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary"
+                               Class="ml-auto"
+                               EndIcon="@Icons.Material.Filled.Send">
+                        Send
+                    </MudButton>
+                </MudCardActions>
+            </MudCard>
         </EditForm>
     </DialogContent>
 </MudDialog>

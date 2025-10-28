@@ -9,18 +9,18 @@
 </MudDialog>
 
 @code {
-[CascadingParameter] private IMudDialogInstance MudDialog { get; set; }
+    [CascadingParameter] private IMudDialogInstance MudDialog { get; set; }
 
-private void Submit()
-{
-    MudDialog.Close(DialogResult.Ok(true));
-}
+    private void Submit()
+    {
+        MudDialog.Close(DialogResult.Ok(true));
+    }
 
-[Parameter] public double ImageId { get; set; }
+    [Parameter] public double ImageId { get; set; }
 
-public string GetImageFile()
-{
-    return ImageId + ".webp";
-}
+    public string GetImageFile()
+    {
+        return ImageId + ".webp";
+    }
 
 }

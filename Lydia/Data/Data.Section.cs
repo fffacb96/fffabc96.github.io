@@ -15,7 +15,6 @@ public class Painting : Section
     public required string Descriptions { get; set; }
 }
 
-
 public static partial class Data
 {
     public static Painting[] Paintings =
@@ -58,7 +57,7 @@ public static partial class Data
             Available = true,
             Name = "Tulipe / Tulip",
             Size = "Original size: 18 x 24",
-            Descriptions = 
+            Descriptions =
                 """
                 Painted in 1971. On canvas using acrylic paints.
                        
@@ -73,7 +72,7 @@ public static partial class Data
             Available = true,
             Name = "Maman / Mother",
             Size = "Original size: 18 x 24",
-            Descriptions = 
+            Descriptions =
                 """
                 This painting was painted in December 1973. Painted on canvas using acrylic paints.
                     
@@ -88,7 +87,7 @@ public static partial class Data
             Available = true,
             Name = "Au bout de l'île / At the end of the island",
             Size = "Original size: 11 x 15",
-            Descriptions = 
+            Descriptions =
                 """
                 Carved and painted in 1954. This painting was carved into wood and painted with oil colours. Then varnished to preserve a soft glow for a partly reflective surface.
 
@@ -103,10 +102,10 @@ public static partial class Data
             Available = true,
             Name = "Amitié / Friendship",
             Size = "Original size: 12.5 x 8.5",
-            Descriptions = 
+            Descriptions =
                 """
                 Painted on red wood in 1975. Carved and oil painted on red wood. Finished with a varnish to preserve a soft glow for a partly reflective surface.
-                
+
                 This is a symbol of friendship between two countries. The Canadian flag and the flag of Sénégal. A friendship never forgotten.
                 """
         },
@@ -118,7 +117,7 @@ public static partial class Data
             Available = true,
             Name = "Perce-neige / Snowdrops",
             Size = "Original size: 4.5 x 6",
-            Descriptions = 
+            Descriptions =
                 """
                 Pyrography in 1960. Used a wood burning tool and carving knifes. Painted with oil colours and finished with a varnish to preserve a soft glow for a partly reflective surface.
 
@@ -133,7 +132,7 @@ public static partial class Data
             Available = true,
             Name = "Jonquille / Daffodil",
             Size = "Original size: 5.5 x 7",
-            Descriptions = 
+            Descriptions =
                 """
                 Pyrography in 1960. Used a wood burning tool and carving knifes. Painted with oil colours and finished with a varnish to preserve a soft glow for a partly reflective surface.
 
@@ -148,7 +147,7 @@ public static partial class Data
             Available = true,
             Name = "Les tournesols / The sunflowers",
             Size = "Original size: 11\"",
-            Descriptions = 
+            Descriptions =
                 """
                 Carved on wood in 1955. Frame of a plate. Painted with oil colours and lightly varnished.
 
@@ -163,7 +162,7 @@ public static partial class Data
             Available = true,
             Name = "Assiette décorative / Decorative plate",
             Size = "Original size: 10\"",
-            Descriptions = 
+            Descriptions =
                 """
                 Carved on wood in 1955. Frame of a plate is carved using carving knives followed by pyrography, delicately burning wood. Painted with oil colours and lightly varnished.
                 """
@@ -176,7 +175,7 @@ public static partial class Data
             Available = true,
             Name = "Assiette Lithuanienne / Lithuanien Plate",
             Size = "Original size: 12\"",
-            Descriptions = 
+            Descriptions =
                 """
                 Carved on wood in 1955. Frame of a plate is sanded down to give a wavy surface, followed by pyrography, delicately burning wood. Painted with oil colours and lightly varnished.
 
@@ -191,7 +190,7 @@ public static partial class Data
             Available = true,
             Name = "Trois pensée / Three pansies",
             Size = "Original size: 11\"",
-            Descriptions = 
+            Descriptions =
                 """
                 Carved on wood in 1955. Frame of a plate is sanded down to give a wavy surface, followed by carving the details. Painted with oil colours and lightly varnished.
 
@@ -206,7 +205,7 @@ public static partial class Data
             Available = true,
             Name = "Nocturne / Night",
             Size = "Original size: 16 x 20",
-            Descriptions = 
+            Descriptions =
                 """
                 Copper year 1967. Push-back method used on copper. The back of the painting is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in. Varnished to preserve a shine.
 
@@ -221,7 +220,7 @@ public static partial class Data
             Available = true,
             Name = "Jeune fille aux tresses / Young girl with braids",
             Size = "Original size: 11 x 18",
-            Descriptions = 
+            Descriptions =
                 """
                 Portrait made back in 1964. Push-back method used on copper. The back of the painting is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in.
 
@@ -236,7 +235,7 @@ public static partial class Data
             Available = true,
             Name = "Koutchoum",
             Size = "Original size: 15 x 19",
-            Descriptions = 
+            Descriptions =
                 """
                 Painting was done in 1964.
 
@@ -253,7 +252,7 @@ public static partial class Data
             Available = true,
             Name = "Annonciation / Annunciation",
             Size = "Original size: 15 x 19",
-            Descriptions = 
+            Descriptions =
                 """
                 Painting was done in 1967.
 
@@ -270,7 +269,7 @@ public static partial class Data
             Available = true,
             Name = "Conte d'andersen / Andersen's Tale",
             Size = "Original size: 18 x 18",
-            Descriptions = 
+            Descriptions =
                 """
                 Painting was done in 1961.
 
@@ -287,7 +286,7 @@ public static partial class Data
             Available = true,
             Name = "Danseuses / Dancers",
             Size = "Original size: 11 x 15",
-            Descriptions = 
+            Descriptions =
                 """
                 Painting was done in 1961.
 
@@ -304,7 +303,7 @@ public static partial class Data
             Available = true,
             Name = "Fontaine de jouvence / Fountain of Youth",
             Size = "Original size: 11 x 15",
-            Descriptions = 
+            Descriptions =
                 """
                 Year 1961. Push-back method used on copper. The back is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in. Dark areas are blackened with black oxide, then varnished to preserve a shine on some areas.
 
@@ -319,7 +318,7 @@ public static partial class Data
             Available = true,
             Name = "Quadrigue / Quadriga",
             Size = "Original size: 11 x 11",
-            Descriptions = 
+            Descriptions =
                 """
                 Year 1961. Push-back method used on copper. The back is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in. Dark areas are blackened with black oxide, then varnished to preserve a shine on some areas.
 
@@ -334,7 +333,7 @@ public static partial class Data
             Available = true,
             Name = "Feuilles d'Erable / Maple leaves",
             Size = "Original size: 11 x 12",
-            Descriptions = 
+            Descriptions =
                 """
                 Year 1960.  Push-back method used on copper. The back of the painting is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in.  Dark areas are blackened with black oxide, then varnished to preserve a shine on surfaced areas.
 
@@ -349,7 +348,7 @@ public static partial class Data
             Available = true,
             Name = "Princesse Javakha / Princess Javakha",
             Size = "Original size: 11 x 14",
-            Descriptions = 
+            Descriptions =
                 """
                 Year 1960.  Push-back method used on copper. The back is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in.  Dark areas are blackened with black oxide, then varnished to preserve a shine on surfaced areas.
 
@@ -364,7 +363,7 @@ public static partial class Data
             Available = true,
             Name = "Loreley / Loreley",
             Size = "Original size: 18 x 15",
-            Descriptions = 
+            Descriptions =
                 """
                 Year 1963.  Push-back method used on copper. The back is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in.  Dark areas are blackened with black oxide, then varnished to preserve a shine on surfaced areas.
 
@@ -379,7 +378,7 @@ public static partial class Data
             Available = true,
             Name = "Colibris / Hummingbirds",
             Size = "Original size: 15 x 19",
-            Descriptions = 
+            Descriptions =
                 """
                 Year 1961. Push-back method used on copper. The back is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in.  Dark areas are blackened with black oxide, then varnished to preserve a shine on surfaced areas.
 
@@ -394,13 +393,12 @@ public static partial class Data
             Available = true,
             Name = "Notre-Dame du Perpétuel Secours / Our Lady of Perpetual Help",
             Size = "Original size: 21 x 27",
-            Descriptions = 
+            Descriptions =
                 """
                 Copper year 1962 - Tin 1971. Push-back method used on both. The back is filled with wax. Which was heated then poured onto the copper and tin. Preventing the painting to cave in.  Dark areas are blackened with black oxide, then varnished to preserve a shine on surfaced areas.
 
                 Mother of God holding the Divine Child
                 """
-        },
-
+        }
     ];
 }

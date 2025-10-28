@@ -2,8 +2,9 @@
 @using Lydia.Pages
 @using Markdig
 @inject IDialogService DialogService
+@inject IJSRuntime JS
 
-<MudButton @onclick="() => OpenDialogAsync(8)">
+<MudButton @onclick="OpenDialogAsync">
     <MudImage loading="lazy" Src="@Painting.File" Style="max-width: 50%" Class="m-auto"></MudImage>
 </MudButton>
 <MudText Typo="Typo.subtitle1">
@@ -22,17 +23,20 @@
 
     [Parameter] public Painting Painting { get; set; }
 
-    private Task OpenDialogAsync(double imageId)
+    private async Task OpenDialogAsync()
     {
         var parameters = new DialogParameters<InquireImageCarouselDialog>
         {
-            { x => x.ImageId, imageId },
             { x => x.Painting, Painting }
         };
 
         var options = new DialogOptions { FullScreen = true, CloseButton = true, CloseOnEscapeKey = true };
 
-        return DialogService.ShowAsync<InquireImageCarouselDialog>("", parameters, options);
+        var painting = Data.Paintings.First(a => a.Order == Painting.Order + 8);
+        
+        await JS.InvokeVoidAsync("urlHelper.setUrl", $"/{painting.Key}");
+        
+        await DialogService.ShowAsync<InquireImageCarouselDialog>("", parameters, options);
     }
-
+    
 }

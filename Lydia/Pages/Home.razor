@@ -1,10 +1,8 @@
 ﻿@page "/"
-@page "/welcome"
-@using Lydia.Components
+@page "/{Painting}"
 @using Lydia.Data
 
-@inject IAnalytics Analytics
-
+@inject IDialogService DialogService
 
 <PageTitle>Elena Kokline</PageTitle>
 
@@ -18,28 +16,48 @@
 
 @code {
 
+    [Parameter] public string? Painting { get; set; }
+
     protected override void OnAfterRender(bool firstRender)
     {
         base.OnAfterRender(firstRender);
+        
+        Console.WriteLine(Painting);
 
-        Analytics.TrackEvent("page", new { value = "Elena Kokline" });
+        if (String.IsNullOrEmpty(Painting)) return;
+        
+        Console.WriteLine("1");
+        
+        var painting = Data.Paintings.FirstOrDefault(a => a.Key == Painting);
+
+        if (painting == null) return;
+        
+        Console.WriteLine("2");
+        
+        var parameters = new DialogParameters<InquireImageCarouselDialog>
+        {
+            { x => x.Painting, painting }
+        };
+
+        var options = new DialogOptions { FullScreen = true, CloseButton = true, CloseOnEscapeKey = true };
+        
+        Console.WriteLine("3");
+        
+        DialogService.ShowAsync<InquireImageCarouselDialog>("", parameters, options);
     }
 
-    /**
-     * 
-<MudContainer Class="mt-16">
-    <MudStack>
-        @foreach (var painting in Data.Paintings)
+    [Parameter] public Painting Painting_ { get; set; }
+
+    private Task OpenDialogAsync(double imageId)
+    {
+        var parameters = new DialogParameters<InquireImageCarouselDialog>
         {
-            <MudPaper Class="pa-16 ma-2">
-                <MudStack>
-                    <SectionPainting Painting="@painting"/>
-                </MudStack>
-            </MudPaper>
-        }
-    </MudStack>
-</MudContainer>
+            { x => x.ImageId, imageId },
+            { x => x.Painting, Painting_ }
+        };
 
+        var options = new DialogOptions { FullScreen = true, CloseButton = true, CloseOnEscapeKey = true };
 
-     */
+        return DialogService.ShowAsync<InquireImageCarouselDialog>("", parameters, options);
+    }
 }
