@@ -1,4 +1,5 @@
 ﻿@using Lydia.Data
+@implements IAsyncDisposable
 @inject IJSRuntime JS
 
 @if (Painting == null || selectedIndex == -1)
@@ -86,9 +87,15 @@ else
 
     [CascadingParameter] private IMudDialogInstance MudDialog { get; set; }
 
+    public async ValueTask DisposeAsync()
+    {
+        await JS.InvokeVoidAsync("urlHelper.setUrl", "/");
+    }
+    
+
     private void Submit()
     {
-        JS.InvokeVoidAsync("urlHelper.setUrl", $"/{Data.Paintings.FirstOrDefault(a => a.Order == selectedIndex + 8)?.Key}");
+        JS.InvokeVoidAsync("urlHelper.setUrl", "/");
         
         MudDialog.Close(DialogResult.Ok(true));
     }
@@ -99,12 +106,8 @@ else
     private int wasSelecteIndex = -1;
     private int selectedIndex = -1;
 
-    //SelectedIndexChanged="OnSlideChanged"
-
     protected override void OnInitialized()
     {
-        Console.WriteLine("Test: " + (Painting.Order - 8).ToString());
-        
         selectedIndex = Painting.Order - 8;
         wasSelecteIndex = selectedIndex;
     }
