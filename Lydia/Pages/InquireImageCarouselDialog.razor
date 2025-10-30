@@ -6,11 +6,20 @@
 <MudDialog DisableFocusTrap="true">
     <DialogContent>
         <MudStack>
+            @if (selectedIndex == 0)
+            {
+                <MudStack Row="true" Style="height: 50px;">
+                    <MudItem>
+                        <MudText Typo="Typo.h1"></MudText>
+                    </MudItem>
+                </MudStack>
+            }
+            
             @foreach (var painting in Data.Paintings)
             {
                 @if (painting.Order == selectedIndex + 7 && selectedIndex != 0)
                 {
-                    <MudStack Row="true" Style="margin-top: 14px">
+                    <MudStack Row="true" Style="height: 50px;">
                         <MudItem>
                             <MudText Typo="Typo.h1">@painting.Name</MudText>
                         </MudItem>
@@ -47,7 +56,7 @@
                 EnableSwipeGesture="true"
                 TData="object">
 
-                <MudCarouselItem Transition="transition">
+                <MudCarouselItem Transition="Transition.Fade">
                     <div class="d-flex flex-column flex-column justify-center" style="height:98%;">
                         <MudButton OnClick="@Submit">
                             <MudImage
@@ -60,7 +69,7 @@
 
                 @foreach (var painting in Data.Paintings)
                 {
-                    <MudCarouselItem Transition="transition">
+                    <MudCarouselItem Transition="Transition.Slide">
                         <div class="d-flex flex-column flex-column justify-center" style="height:98%;">
                             <MudButton OnClick="@Submit">
                                 <MudImage
@@ -83,11 +92,15 @@
 
 
 @code {
-    private bool arrows = true;
-    private bool bullets = true;
-    private bool enableSwipeGesture = true;
-    private bool autocycle = true;
-    private readonly Transition transition = Transition.Slide;
+    [Parameter] public double? ImageId { get; set; } = 1;
+    [Parameter] public Painting? Painting { get; set; } = null;
+
+    private int wasSelecteIndex = -1;
+    private int selectedIndex = -1;
+    
+    private int initialIndex = -1;
+
+    
 
     [Inject] NavigationManager Navigation { get; set; } = default!;
 
@@ -116,16 +129,7 @@
         MudDialog.Close(DialogResult.Ok(true));
     }
 
-    [Parameter] public double? ImageId { get; set; } = 1;
-
-
-    [Parameter] public Painting? Painting { get; set; } = null;
-
-    private int wasSelecteIndex = -1;
-    private int selectedIndex = -1;
-    
-    private int initialIndex = -1;
-
+  
     protected override void OnInitialized()
     {
         if (Painting != null)
@@ -141,18 +145,6 @@
             wasSelecteIndex = selectedIndex;
             initialIndex = selectedIndex;
         }
-    }
-
-    protected override async Task OnParametersSetAsync()
-    {
-        var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
-
-        await Task.Delay(1);
-
-
-        Console.WriteLine(selectedIndex);
-
-        Console.WriteLine(uri);
     }
 
     protected override void OnAfterRender(bool firstRender)
