@@ -1,79 +1,86 @@
 ﻿@using Lydia.Data
 @implements IAsyncDisposable
-@inject IJSRuntime JS
+@inject IJSRuntime Js
 
-@if (Painting == null || selectedIndex == -1)
-{
-}
-else
-{
-    <MudDialog DisableFocusTrap="true">
-        <DialogContent>
-            <MudStack>
+
+<MudDialog DisableFocusTrap="true">
+    <DialogContent>
+        <MudStack>
+            @foreach (var painting in Data.Paintings)
+            {
+                @if (painting.Order == selectedIndex + 7 && selectedIndex != 0)
+                {
+                    <MudStack Row="true" Style="margin-top: 14px">
+                        <MudItem>
+                            <MudText Typo="Typo.h1">@painting.Name</MudText>
+                        </MudItem>
+                        @if (painting.Available)
+                        {
+                            <MudSpacer></MudSpacer>
+                            <MudItem>
+                                <MudChip Text="green" Color="Color.Success" Value="@Color.Success">Available
+                                </MudChip>
+                            </MudItem>
+                            <MudItem>
+                                <a href="@MailToLink">
+                                    <MudButton
+                                        Variant="Variant.Filled"
+                                        Color="Color.Primary"
+                                        EndIcon="@Icons.Material.Filled.ContactSupport">
+                                        Inquire
+                                    </MudButton>
+                                </a>
+
+                            </MudItem>
+                        }
+                    </MudStack>
+                }
+            }
+
+            <MudCarousel
+                @bind-SelectedIndex="@selectedIndex"
+                Class="mud-width-full"
+                Style="height: 95vh"
+                ShowArrows="true"
+                ShowBullets="false"
+                AutoCycle="false"
+                EnableSwipeGesture="true"
+                TData="object">
+
+                <MudCarouselItem Transition="transition">
+                    <div class="d-flex flex-column flex-column justify-center" style="height:98%;">
+                        <MudButton OnClick="@Submit">
+                            <MudImage
+                                Src="@GetImageFile()"
+                                Style="max-width: 100vw; max-height: 76vh"
+                                Class="m-auto"></MudImage>
+                        </MudButton>
+                    </div>
+                </MudCarouselItem>
+
                 @foreach (var painting in Data.Paintings)
                 {
-                    @if (painting.Order == selectedIndex + 8)
-                    {
-                        <MudStack Row="true" Style="margin-top: 14px">
-                            <MudItem>
-                                <MudText Typo="Typo.h1">@painting.Name</MudText>
-                            </MudItem>
-                            @if (painting.Available)
-                            {
-                                <MudSpacer></MudSpacer>
-                                <MudItem>
-                                    <MudChip Text="green" Color="Color.Success" Value="@Color.Success">Available
-                                    </MudChip>
-                                </MudItem>
-                                <MudItem>
-                                    <a href="@MailToLink">
-                                        <MudButton
-                                            Variant="Variant.Filled"
-                                            Color="Color.Primary"
-                                            EndIcon="@Icons.Material.Filled.ContactSupport">
-                                            Inquire
-                                        </MudButton>
-                                    </a>
-
-                                </MudItem>
-                            }
-                        </MudStack>
-                    }
+                    <MudCarouselItem Transition="transition">
+                        <div class="d-flex flex-column flex-column justify-center" style="height:98%;">
+                            <MudButton OnClick="@Submit">
+                                <MudImage
+                                    Src="@painting.File"
+                                    Style="max-width: 100vw; max-height: 76vh"
+                                    Class="m-auto"></MudImage>
+                            </MudButton>
+                        </div>
+                    </MudCarouselItem>
                 }
+            </MudCarousel>
 
-                <MudCarousel
-                    @bind-SelectedIndex="@selectedIndex"
-                    Class="mud-width-full"
-                    Style="height: 95vh"
-                    ShowArrows="true"
-                    ShowBullets="false"
-                    AutoCycle="false"
-                    EnableSwipeGesture="true"
-                    TData="object">
+            <MudText>
+                @selectedIndex
+            </MudText>
 
-                    @foreach (var painting in Data.Paintings)
-                    {
-                        <MudCarouselItem Transition="transition">
-                            <div class="d-flex flex-column flex-column justify-center" style="height:98%;">
-                                <MudButton OnClick="@Submit">
-                                    <MudImage 
-                                        Src="@painting.File" 
-                                        Style="max-width: 100vw; max-height: 76vh"
-                                        Class="m-auto"></MudImage>
-                                </MudButton>
-                            </div>
-                        </MudCarouselItem>
-                    }
-                </MudCarousel>
+        </MudStack>
+    </DialogContent>
+</MudDialog>
 
-                <MudText>
-                    @selectedIndex
-                </MudText>
-
-            </MudStack>
-        </DialogContent>
-    </MudDialog>
-}
 
 @code {
     private bool arrows = true;
@@ -81,46 +88,70 @@ else
     private bool enableSwipeGesture = true;
     private bool autocycle = true;
     private readonly Transition transition = Transition.Slide;
-    
-    [Inject] NavigationManager Navigation { get; set; } = default!;
 
+    [Inject] NavigationManager Navigation { get; set; } = default!;
 
     [CascadingParameter] private IMudDialogInstance MudDialog { get; set; }
 
     public async ValueTask DisposeAsync()
     {
-        await JS.InvokeVoidAsync("urlHelper.setUrl", "/");
+        await Js.InvokeVoidAsync("urlHelper.setUrl", "/");
+
+        if (selectedIndex != 0)
+        {
+            if (Math.Abs(initialIndex - selectedIndex) < 3 && initialIndex != 0)
+            {
+                await Js.InvokeVoidAsync("scrollHelper.scrollTo", Data.Paintings.First(a => a.Order == selectedIndex + 7).Key);
+            }
+            else
+            {
+                await Js.InvokeVoidAsync("scrollHelper.goTo", Data.Paintings.First(a => a.Order == selectedIndex + 7).Key);
+            }
+        }
     }
-    
 
     private void Submit()
     {
-        JS.InvokeVoidAsync("urlHelper.setUrl", "/");
-        
+        Js.InvokeVoidAsync("urlHelper.setUrl", "/");
         MudDialog.Close(DialogResult.Ok(true));
     }
 
-    [Parameter] public double ImageId { get; set; }
-    [Parameter] public Painting Painting { get; set; }
+    [Parameter] public double? ImageId { get; set; } = 1;
+
+
+    [Parameter] public Painting? Painting { get; set; } = null;
 
     private int wasSelecteIndex = -1;
     private int selectedIndex = -1;
+    
+    private int initialIndex = -1;
 
     protected override void OnInitialized()
     {
-        selectedIndex = Painting.Order - 8;
-        wasSelecteIndex = selectedIndex;
+        if (Painting != null)
+        {
+         
+            selectedIndex = Painting.Order - 7;
+            wasSelecteIndex = selectedIndex;
+            initialIndex = selectedIndex;
+        }
+        else
+        {
+            selectedIndex = 0;
+            wasSelecteIndex = selectedIndex;
+            initialIndex = selectedIndex;
+        }
     }
-    
+
     protected override async Task OnParametersSetAsync()
     {
         var uri = Navigation.ToAbsoluteUri(Navigation.Uri);
-        
+
         await Task.Delay(1);
-        
-        
+
+
         Console.WriteLine(selectedIndex);
-            
+
         Console.WriteLine(uri);
     }
 
@@ -130,31 +161,32 @@ else
 
         if (selectedIndex == wasSelecteIndex) return;
         _ = OnSlideChanged(selectedIndex);
-            
+
         wasSelecteIndex = selectedIndex;
     }
-    
+
     public string GetImageFile()
     {
         return ImageId + ".webp";
     }
-    
+
     private async Task OnSlideChanged(int newIndex)
     {
         if (newIndex == -1)
         {
             return;
         }
-         
+
         selectedIndex = newIndex;
 
-        var painting = Data.Paintings.First(a => a.Order == newIndex + 8);
-        
-        await JS.InvokeVoidAsync("urlHelper.setUrl", $"/{painting.Key}");
+        var painting = Data.Paintings.First(a => a.Order == newIndex + 7);
+
+        await Js.InvokeVoidAsync("urlHelper.setUrl", $"/{painting.Key}");
     }
 
-    string Message => $"Hello Lydia, \n\nI wish to inquire about painting(s): \"{Data.Paintings.FirstOrDefault(a => a.Order == selectedIndex + 8)?.Name}\"... \n\nIn the Elena Kokline collection.";
-    
-    string MailToLink => 
+    string Message => $"Hello Lydia, \n\nI wish to inquire about painting(s): \"{Data.Paintings.FirstOrDefault(a => a.Order == selectedIndex + 7)?.Name}\"... \n\nIn the Elena Kokline collection.";
+
+    string MailToLink =>
         $"mailto:jonmcc.0723@gmail.com?subject=Art%20Inquiry&body={Uri.EscapeDataString(Message)}";
+
 }

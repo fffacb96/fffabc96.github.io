@@ -2,9 +2,9 @@
 @using Lydia.Pages
 @using Markdig
 @inject IDialogService DialogService
-@inject IJSRuntime JS
+@inject IJSRuntime Js
 
-<MudButton @onclick="OpenDialogAsync">
+<MudButton id="@Painting.Key" @onclick="OpenDialogAsync">
     <MudImage loading="lazy" Src="@Painting.File" Style="max-width: 50%" Class="m-auto"></MudImage>
 </MudButton>
 <MudText Typo="Typo.subtitle1">
@@ -34,7 +34,7 @@
 
         var painting = Data.Paintings.First(a => a.Order == Painting.Order);
         
-        await JS.InvokeVoidAsync("urlHelper.setUrl", $"/{painting.Key}");
+        await Js.InvokeVoidAsync("urlHelper.setUrl", $"/{painting.Key}");
         
         await DialogService.ShowAsync<InquireImageCarouselDialog>("", parameters, options);
     }
