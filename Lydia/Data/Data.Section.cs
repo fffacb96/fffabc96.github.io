@@ -307,7 +307,7 @@ public static partial class Data
                 """
                 Year 1961. Push-back method used on copper. The back is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in. Dark areas are blackened with black oxide, then varnished to preserve a shine on some areas.
 
-                <a href="https://en.wikipedia.org/wiki/Fountain_of_Youth">Mythical fountain</a> allegedly restores the youth to anyone who baths in it.
+                <a class="btn-link" href="https://en.wikipedia.org/wiki/Fountain_of_Youth">Mythical fountain</a> allegedly restores the youth to anyone who baths in it.
                 """
         },
         new()
@@ -367,7 +367,7 @@ public static partial class Data
                 """
                 Year 1963.  Push-back method used on copper. The back is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in.  Dark areas are blackened with black oxide, then varnished to preserve a shine on surfaced areas.
 
-                The beautiful <a href="https://visitworldheritage.com/en/eu/the-loreley-rock/7b9a0bb3-18b3-44da-907e-e9861d3f831b">siren</a>/mermaid whose songs enchanted passing sailors.
+                The beautiful <a class="btn-link" href="https://visitworldheritage.com/en/eu/the-loreley-rock/7b9a0bb3-18b3-44da-907e-e9861d3f831b">siren</a>/mermaid whose songs enchanted passing sailors.
                 """
         },
         new()
@@ -397,7 +397,7 @@ public static partial class Data
                 """
                 Copper year 1962 - Tin 1971. Push-back method used on both. The back is filled with wax. Which was heated then poured onto the copper and tin. Preventing the painting to cave in.  Dark areas are blackened with black oxide, then varnished to preserve a shine on surfaced areas.
 
-                <a href="https://en.wikipedia.org/wiki/Our_Lady_of_Perpetual_Help">Mother of God holding the Divine Child</a>
+                <a class="btn-link" href="https://en.wikipedia.org/wiki/Our_Lady_of_Perpetual_Help">Mother of God holding the Divine Child</a>
                 """
         }
     ];
