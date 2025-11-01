@@ -1,0 +1,42 @@
+@using Lydia.Data
+@using Lydia.Pages
+@using Markdig
+@inject IDialogService DialogService
+@inject IJSRuntime Js
+
+<MudButton id="@Painting.Key" @onclick="OpenDialogAsync">
+    <MudImage loading="lazy" Src="@Painting.File" Style="max-width: 50%" Class="m-auto"></MudImage>
+</MudButton>
+<MudText Typo="Typo.subtitle1">
+    @Painting.Size
+</MudText>
+
+<MudText Typo="Typo.h2">
+    @Painting.Name
+</MudText>
+
+<MudText Typo="Typo.body1">
+    @((MarkupString)Markdown.ToHtml(Painting.Descriptions))
+</MudText>
+
+@code {
+
+    [Parameter] public Painting Painting { get; set; }
+
+    private async Task OpenDialogAsync()
+    {
+        var parameters = new DialogParameters<InquireImageCarouselDialog>
+        {
+            { x => x.Painting, Painting }
+        };
+
+        var options = new DialogOptions { FullScreen = true, CloseButton = true, CloseOnEscapeKey = true };
+
+        var painting = Data.Paintings.First(a => a.Order == Painting.Order);
+
+        await Js.InvokeVoidAsync("urlHelper.setUrl", $"/{painting.Key}");
+
+        await DialogService.ShowAsync<InquireImageCarouselDialog>("", parameters, options);
+    }
+
+}

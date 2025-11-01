@@ -1,719 +1,263 @@
-﻿@inject IDialogService DialogService
+﻿@using Lydia.Components
+@using Lydia.Data
+@inject IDialogService DialogService
 
 <MudContainer Class="mt-16">
     <MudStack>
+        <MudStack>
+            <MudText Typo="Typo.h2" Align="Align.Center">Copper, Tin, Wood and Canvas Art</MudText>
+            <MudButton @onclick="() => OpenDialogAsync(1)">
+                <MudImage loading="lazy" Src="1.webp" Style="max-height: 60%; max-width: 40%" Class="m-auto"></MudImage>
+            </MudButton>
+            <MudText Typo="Typo.h1">Welcome</MudText>
+            <MudText Typo="Typo.body1">
+                This site is dedicated to my lovely mother who had an artistic flare, she passed away in 2018.
+                There's much
+                to see here. Her love for art. So, take your time, look around, all there is to know about her
+                passion. I
+                hope you enjoy the site and take a moment to drop me a line.
+            </MudText>
+            <MudText Typo="Typo.body2">
+                Lydia Kokline
+            </MudText>
+            <MudText Typo="Typo.body2">
+                <a class="btn-link" href="mailto:lkokline@gmail.com">lkokline@gmail.com</a>
+            </MudText>
+            <MudText Typo="Typo.body2">
+                613-323-2941
+            </MudText>
+        </MudStack>
 
-        
-            <MudStack>
-                <MudText Typo="Typo.h2" Align="Align.Center">Copper, Tin, Wood and Canvas Art</MudText>
-                <MudButton @onclick="() => OpenDialogAsync(1)">
-                    <MudImage loading="lazy" Src="1.webp" Style="max-height: 60%; max-width: 40%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.h1">Welcome</MudText>
-                <MudText Typo="Typo.body1">
-                    This site is dedicated to my lovely mother who had an artistic flare, she passed away in 2018.
-                    There's much
-                    to see here. Her love for art. So, take your time, look around, all there is to know about her
-                    passion. I
-                    hope you enjoy the site and take a moment to drop me a line.
-                </MudText>
-                <MudText Typo="Typo.body2">
-                    Lydia Kokline
-                </MudText>
-                <MudText Typo="Typo.body2">
-                    <a href="mailto:lkokline@gmail.com">lkokline@gmail.com</a>
-                </MudText>
-                <MudText Typo="Typo.body2">
-                    613-323-2941
-                </MudText>
-            </MudStack>
-        
 
-        
-            <MudStack>
-                <MudText Typo="Typo.h1">About the Artist</MudText>
-                <MudButton @onclick="() => OpenDialogAsync(20)">
-                    <MudStack >
-                        <MudImage loading="lazy" Width="500" Style="max-width: 50%" Src="2.1.webp" Class="m-auto"></MudImage>
-                        <MudStack>
-                            <MudText Typo="Typo.h2" Align="Align.Left">Her Background</MudText>
-                            <MudText Typo="Typo.body1" Align="Align.Left">
-                                Having studied at Brussels "Academie Royale des Beaux Arts" three years under Master G.
-                                de Vlamyneck, she won a first prize, awarded her by the Burgomaster of the City of
-                                Brussels in 1949.
-                            </MudText>
-                        </MudStack>
+        <MudStack>
+            <MudText Typo="Typo.h1">About the Artist</MudText>
+            <MudButton @onclick="() => OpenDialogAsync(20)">
+                <MudStack>
+                    <MudImage loading="lazy" Width="500" Style="max-width: 50%" Src="2.1.webp"
+                              Class="m-auto"></MudImage>
+                    <MudStack>
+                        <MudText Typo="Typo.h2" Align="Align.Left">Her Background</MudText>
+                        <MudText Typo="Typo.body1" Align="Align.Left">
+                            Having studied at Brussels "Academie Royale des Beaux Arts" three years under Master G.
+                            de Vlamyneck, she won a first prize, awarded her by the Burgomaster of the City of
+                            Brussels in 1949.
+                        </MudText>
                     </MudStack>
-                </MudButton>
-                <MudButton @onclick="() => OpenDialogAsync(9)">
-                    <MudStack  AlignItems="AlignItems.Start">
-                        <MudImage loading="lazy" Width="500" Style="width: 500px; max-width: 50%" Src="2.2.webp"
-                                  Class="m-auto"></MudImage>
-                        <MudStack>
-                            <MudText Typo="Typo.h2" Align="Align.Left">Her Medium</MudText>
-                            <MudText Typo="Typo.body1" Align="Align.Left">
-                                She used many different mediums, such as poker-works, wood-sculpturing, oils, copper,
-                                tin
-                                acrylics on canvas and water colors . She believes that working in a single medium was
-                                restrictive to her artistic process.
-                            </MudText>
-                        </MudStack>
-                    </MudStack>
-                </MudButton>
-                <MudButton @onclick="() => OpenDialogAsync(12)">
-                    <MudStack >
-                        <MudImage loading="lazy" Width="500" Style="max-width: 50%" Src="2.3.webp" Class="m-auto"></MudImage>
-                        <MudStack>
-                            <MudText Typo="Typo.h2" Align="Align.Left">Her Inspiration</MudText>
-                            <MudText Typo="Typo.body1" Align="Align.Left">
-                                She enjoyed her art. Some of her inspiration came from visions in frosted windows,
-                                trees,
-                                flowers and her beliefs, which she would replicate them into paintings.
-                            </MudText>
-                        </MudStack>
-                    </MudStack>
-                </MudButton>
-            </MudStack>
-        
-
-
-        
-            <MudStack>
-                <MudText Typo="Typo.h1">Background</MudText>
-                <MudButton @onclick="() => OpenDialogAsync(3)">
-                    <MudImage loading="lazy" Src="3.webp" Style="max-height: 60%; max-width: 40%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.h2">Self portrait when she was 25 years old - water colours</MudText>
-                <MudText Typo="Typo.body1">
-                    Mrs. Elena Kokline has exhibited at the following places:
-                    <br/>
-                    <ul>
-                        <li>Palais Montcalm - Québec city - December 1971</li>
-                        <li>West Africa - Sénégal - January 1974</li>
-                        <li>Glebe centre - Ottawa - March 1976</li>
-                    </ul>
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(4)">
-                    <MudImage loading="lazy" Src="4.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Graduation day</MudText>
-                <MudText Typo="Typo.h2">History</MudText>
-                <MudText Typo="Typo.body1">
-                    <ul>
-                        <li>Born in Lithuanie - Kaunas - 1923</li>
-                        <li>Spoke 7 languages</li>
-                        <li>February 1949, she got married to a Doctor who majored in chemistry/physics and graduated
-                            from the Catholic University of Louvain
-                        </li>
-                        <li>Together they immigrated to Canada in 1951</li>
-                        <li>They had 5 children. All girls have inherited the artistic flare</li>
-                    </ul>
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudText Typo="Typo.h1">Portfolio - History</MudText>
-                <MudButton @onclick="() => OpenDialogAsync(5)">
-                    <MudImage loading="lazy" Src="5.webp" Style="max-width: 66%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.body2">
-                    "Mme Elèna Kokline et sa dernière toile qui symbolise ses amours et ses impression du Sénégal: le
-                    baobab, le soleil l'antilope et la biche sculptée. En observan bien les branches du baobab vous
-                    decouvriez les tête d'antilopes et de biches qu'une main parfois étreint. Cette main est cell de
-                    l'artiste." — <b>News paper clipping, 1974</b>
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(6)">
-                    <MudImage loading="lazy" Src="6.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.body1">
-                    Diploma - Ville de Brusxelles. Academie royale des beaux-arts et école des arts décoratifs. Was
-                    awarded to her by the Burgomaster of the City of Brussels in 1949.
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(7)">
-                    <MudImage loading="lazy" Src="7.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.body2">
-                    "The works of a Neo-Canadian artist - Article read as: Mrs. Elena Kokline a Neo-Canadian artist who
-                    only recently exhibited her latest works at the Palais Montcalm. Having studied at Brusels "Academie
-                    Royal des beaux Arts". She has been residing in Quebec since 1951, and thus, has had her stylish and
-                    decorative works - most symbolic - before the public for some 20 years. She excels in poker-works,
-                    wood-sculpturing, oils, copper tin and water-colors." — <b>News paper clipping, 1971</b>
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(8)">
-                    <MudImage loading="lazy" Src="8.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 18 x 24</MudText>
-                <MudText Typo="Typo.h2">Grandit, mais ne viellit pas / Grows, but does not age</MudText>
-                <MudText Typo="Typo.body1">
-                    The painting was painted in 1971 on canvas using acrylic paint. If looked closely enough you can see
-                    areas that are highly emphasized, for definition.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    This monument was dedicated in memory of Quebec Labour Minister <b>Pierre Laporte</b> who was
-                    kidnapped and murdered by the FLQ (Front de libération du Québec), back in 1970.
-                </MudText>
-            </MudStack>
-        
-
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(9)">
-                    <MudImage loading="lazy" Src="9.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 18 x 24</MudText>
-                <MudText Typo="Typo.h2">Mère la palme florissante de la vieillesse / Mother the flourishing palm of old
-                    age
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Was painted in 1974 in Thiès. Painted on canvas, using acrylic paints.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Painting representing that the mother is aging gracefully as the palm tree. Her strength, her hard
-                    work, in the midst of a hot sun and surrounded by palm trees that also nourish our planet.
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(10)">
-                    <MudImage loading="lazy" Src="10.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 18 x 24</MudText>
-                <MudText Typo="Typo.h2">Tulipe / Tulip</MudText>
-                <MudText Typo="Typo.body1">
-                    Painted in 1971. On canvas using acrylic paints.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    When looking into a tulip you see the anther and the filament - the stems. That look just as
-                    graceful and delicate like a family of beautiful swans.
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(11)">
-                    <MudImage loading="lazy" Src="11.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 18 x 24</MudText>
-                <MudText Typo="Typo.h2">Maman / Mother</MudText>
-                <MudText Typo="Typo.body1">
-                    This painting was painted in December 1973. Painted on canvas using acrylic paints.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    The inspiration came from a frosted window, where she saw an adult head, tears and a babies head,
-                    held close to the chest. Hens the name "Maman".
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(12)">
-                    <MudImage loading="lazy" Src="12.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 11 x 15</MudText>
-                <MudText Typo="Typo.h2">Au bout de l'île / At the end of the island</MudText>
-                <MudText Typo="Typo.body1">
-                    Carved and painted in 1954. This painting was carved into wood and painted with oil colours. Then
-                    varnished to preserve a soft glow for a partly reflective surface.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Inspired by a trip to Îles-de-la-Madeleine at the Gulf of Saint Lawrence. Very pretty with its red
-                    cliffs and its many caves dug by the sea.
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(13)">
-                    <MudImage loading="lazy" Src="13.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 12.5 x 8.5</MudText>
-                <MudText Typo="Typo.h2">Amitié / Friendship</MudText>
-                <MudText Typo="Typo.body1">
-                    Painted on red wood in 1975. Carved and oil painted on red wood. Finished with a varnish to preserve
-                    a soft glow for a partly reflective surface.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    This is a symbol of friendship between two countries. The Canadian flag and the flag of Sénégal. A
-                    friendship never forgotten.
-                </MudText>
-            </MudStack>
-        
-
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(14)">
-                    <MudImage loading="lazy" Src="14.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 4.5 x 6</MudText>
-                <MudText Typo="Typo.h2">Perce-neige / Snowdrops</MudText>
-                <MudText Typo="Typo.body1">
-                    Pyrography in 1960. Used a wood burning tool and carving knifes. Painted with oil colours and
-                    finished with a varnish to preserve a soft glow for a partly reflective surface.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    One of first flowers to bloom in spring, they often symbolize new beginnings, hope, and overcome
-                    challenges. Having 5 girls was a challenge
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(15)">
-                    <MudImage loading="lazy" Src="15.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 5.5 x 7</MudText>
-                <MudText Typo="Typo.h2">Jonquille / Daffodil</MudText>
-                <MudText Typo="Typo.body1">
-                    Pyrography in 1960. Used a wood burning tool and carving knifes. Painted with oil colours and
-                    finished with a varnish to preserve a soft glow for a partly reflective surface.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Inspired by natures beauty daffodils and pussy willows emerge in spring for Easter blessings.
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(16)">
-                    <MudImage loading="lazy" Src="16.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 11"</MudText>
-                <MudText Typo="Typo.h2">Les tournesols / The sunflowers</MudText>
-                <MudText Typo="Typo.body1">
-                    Carved on wood in 1955. Frame of a plate. Painted with oil colours and lightly varnished.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    She always like sunflowers and would plant them in her garden.
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(17)">
-                    <MudImage loading="lazy" Src="17.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 10"</MudText>
-                <MudText Typo="Typo.h2">Assiette décorative / Decorative plate</MudText>
-                <MudText Typo="Typo.body1">
-                    Carved on wood in 1955. Frame of a plate is carved using carving knives followed by pyrography,
-                    delicately burning wood. Painted with oil colours and lightly varnished.
-                </MudText>
-            </MudStack>
-        
-
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(18)">
-                    <MudImage loading="lazy" Src="18.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 12"</MudText>
-                <MudText Typo="Typo.h2">Assiette Lithuanienne / Lithuanien Plate</MudText>
-                <MudText Typo="Typo.body1">
-                    Carved on wood in 1955. Frame of a plate is sanded down to give a wavy surface, followed by
-                    pyrography, delicately burning wood. Painted with oil colours and lightly varnished.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    The colours she used are symbolic to the Lithuanian flag, yellow, green, and red.
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(19)">
-                    <MudImage loading="lazy" Src="19.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 11"</MudText>
-                <MudText Typo="Typo.h2">Trois pensée / Three pansies</MudText>
-                <MudText Typo="Typo.body1">
-                    Carved on wood in 1955. Frame of a plate is sanded down to give a wavy surface, followed by carving
-                    the details. Painted with oil colours and lightly varnished.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    She liked her flowers and would grow them in her garden. She was very thoughtful.
-                </MudText>
-            </MudStack>
-        
-
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(20)">
-                    <MudImage loading="lazy" Src="20.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 16 x 20</MudText>
-                <MudText Typo="Typo.h2">Nocturne / Night</MudText>
-                <MudText Typo="Typo.body1">
-                    Copper year 1967. Push-back method used on copper. The back of the painting is filled with wax.
-                    Which was heated then poured onto the copper. Preventing the painting to cave in. Varnished to
-                    preserve a shine.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Three laddies sitting on a rock, basking in the moonlight ocean to cool from the hot summer nights.
-                </MudText>
-            </MudStack>
-        
-
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(21)">
-                    <MudImage loading="lazy" Src="21.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 11 x 18</MudText>
-                <MudText Typo="Typo.h2">Jeune fille aux tresses / Young girl with braids</MudText>
-                <MudText Typo="Typo.body1">
-                    Portrait made back in 1964. Push-back method used on copper. The back of the painting is filled with
-                    wax. Which was heated then poured onto the copper. Preventing the painting to cave in.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    I am pretty sure it was a self portrait when she was younger as she did wear braids. Then again so
-                    did her girls.
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(22)">
-                    <MudImage loading="lazy" Src="22.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 15 x 19</MudText>
-                <MudText Typo="Typo.h2">Koutchoum</MudText>
-                <MudText Typo="Typo.body1">
-                    Painting was done in 1964.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Push-back method used on copper. The back of the painting is filled with wax. Which was heated then
-                    poured onto the copper. Preventing the painting to cave in. Lots of detail was put in.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Her beloved German shepherd when he passed away, she made a portrait of him, to never be forgotten.
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(23)">
-                    <MudImage loading="lazy" Src="23.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 15 x 19</MudText>
-                <MudText Typo="Typo.h2">Annonciation / Annunciation</MudText>
-                <MudText Typo="Typo.body1">
-                    Painting was done in 1967.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Push-back method used on copper. The back of the painting is filled with wax. Which was heated then
-                    poured onto the copper. Preventing the painting to cave in.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    The announcement of the Incarnation by the angel Gabriel to virgin Mary.
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(24)">
-                    <MudImage loading="lazy" Src="24.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 18 x 18</MudText>
-                <MudText Typo="Typo.h2">Conte d'andersen / Andersen's Tale</MudText>
-                <MudText Typo="Typo.body1">
-                    Painting was done in 1961.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Push-back method used on tin. The back is filed with wax. Which was heated then poured onto the tin.
-                    Preventing the painting to cave in.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    It's a story of a princess who rescues her 11 brothers from a spell cast by an evil queen. In this
-                    case she shows 5 swans representing her 5 girls.
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(25)">
-                    <MudImage loading="lazy" Src="25.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 11 x 15</MudText>
-                <MudText Typo="Typo.h2">Danseuses / Dancers</MudText>
-                <MudText Typo="Typo.body1">
-                    Painting was done in 1961.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Push-back method used on copper. The back of the painting is filled with wax. Which was heated then
-                    poured onto the copper. Preventing the painting to cave in.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Three dancing gypsies. Gypsy dance is, dynamic and entertaining. Russian folk dance dated back
-                    around the 19th century.
-                </MudText>
-            </MudStack>
-        
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(26)">
-                    <MudImage loading="lazy" Src="26.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 11 x 15</MudText>
-                <MudText Typo="Typo.h2">Fontaine de jouvence / Fountain of Youth</MudText>
-                <MudText Typo="Typo.body1">
-                    Year 1961. Push-back method used on copper. The back is filled with wax. Which was heated then
-                    poured onto the copper. Preventing the painting to cave in. Dark areas are blackened with black
-                    oxide, then varnished to preserve a shine on some areas.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Mythical fountainallegedly restores the youth to anyone who baths in it.
-                </MudText>
-            </MudStack>
-        
-
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(27)">
-                    <MudImage loading="lazy" Src="27.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 11 x 11</MudText>
-                <MudText Typo="Typo.h2">Quadrigue / Quadriga</MudText>
-                <MudText Typo="Typo.body1">
-                    Year 1961. Push-back method used on copper. The back is filled with wax. Which was heated then
-                    poured onto the copper. Preventing the painting to cave in. Dark areas are blackened with black
-                    oxide, then varnished to preserve a shine on some areas.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Historically famous for the Brandenburg gate quadriga, 4 majestic horses.
-                </MudText>
-            </MudStack>
-        
-
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(28)">
-                    <MudImage loading="lazy" Src="28.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 11 x 12</MudText>
-                <MudText Typo="Typo.h2">Feuilles d'Erable / Maple leaves</MudText>
-                <MudText Typo="Typo.body1">
-                    Year 1960.  Push-back method used on copper. The back of the painting is filled with wax. Which was
-                    heated then poured onto the copper. Preventing the painting to cave in.  Dark areas are blackened
-                    with black oxide, then varnished to preserve a shine on surfaced areas.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Symbolic to the beauty of maple leaves.
-                </MudText>
-            </MudStack>
-        
-
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(29)">
-                    <MudImage loading="lazy" Src="29.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 11 x 14</MudText>
-                <MudText Typo="Typo.h2">Princesse Javakha / Princess Javakha</MudText>
-                <MudText Typo="Typo.body1">
-                    Year 1960.  Push-back method used on copper. The back is filled with wax. Which was heated then
-                    poured onto the copper. Preventing the painting to cave in.  Dark areas are blackened with black
-                    oxide, then varnished to preserve a shine on surfaced areas.
-                    Folk tale. Princess Javakha escaping her rivals on a horse.
-                </MudText>
-            </MudStack>
-        
-
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(30)">
-                    <MudImage loading="lazy" Src="30.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 18 x 15</MudText>
-                <MudText Typo="Typo.h2">Loreley / Loreley</MudText>
-                <MudText Typo="Typo.body1">
-                    Year 1963.  Push-back method used on copper. The back is filled with wax. Which was heated then
-                    poured onto the copper. Preventing the painting to cave in.  Dark areas are blackened with black
-                    oxide, then varnished to preserve a shine on surfaced areas.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    The beautiful siren/mermaid whose songs enchanted passing sailors.
-                </MudText>
-            </MudStack>
-        
-
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(31)">
-                    <MudImage loading="lazy" Src="31.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 15 x 19</MudText>
-                <MudText Typo="Typo.h2">Colibris / Hummingbirds</MudText>
-                <MudText Typo="Typo.body1">
-                    Year 1961. Push-back method used on copper. The back is filled with wax. Which was heated then
-                    poured onto the copper. Preventing the painting to cave in.  Dark areas are blackened with black
-                    oxide, then varnished to preserve a shine on surfaced areas.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Inspiring sign of hope & good luck. The spirit of a loved one is nearby.
-                </MudText>
-            </MudStack>
-        
-
-
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(32)">
-                    <MudImage loading="lazy" Src="32.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.subtitle1">Original size: 21 x 27</MudText>
-                <MudText Typo="Typo.h2">Notre-Dame du Perpétuel Secours / Our Lady of Perpetual Help</MudText>
-                <MudText Typo="Typo.body1">
-                    Copper year 1962 - Tin 1971. Push-back method used on both. The back is filled with wax. Which was
-                    heated then poured onto the copper and tin. Preventing the painting to cave in.  Dark areas are
-                    blackened with black oxide, then varnished to preserve a shine on surfaced areas.
-                    Mother of God holding the Divine Child 
-                </MudText>
-            </MudStack>
-        
-
-
-        
-            <MudStack>
-                <MudText Typo="Typo.h1">Tools</MudText>
-                <MudButton @onclick="() => OpenDialogAsync(34.1)">
-                    <MudStack >
-                        <MudImage loading="lazy" Width="500" Style="max-width: 50%" Src="34.1.webp" Class="m-auto"></MudImage>
-                        <MudStack>
-                            <MudText Typo="Typo.h2" Align="Align.Left">X-acto knifes and tools</MudText>
-                            <MudText Typo="Typo.body1" Align="Align.Left">
-                                The tools used by my mom when she was creating her artwork. Many hours spent using those
-                                tools and no injuries ... well none that I knew of.
-                            </MudText>
-                        </MudStack>
-                    </MudStack>
-                </MudButton>
-                <MudButton @onclick="() => OpenDialogAsync(34.2)">
-                    <MudStack  AlignItems="AlignItems.Start">
-                        <MudImage loading="lazy" Width="500" Style="width: 500px; max-width: 50%" Src="34.2.webp"
-                                  Class="m-auto"></MudImage>
-                        <MudStack>
-                            <MudText Typo="Typo.h2" Align="Align.Left">Price list in 1956</MudText>
-                            <MudText Typo="Typo.body1" Align="Align.Left">
-                                Back in the good old days! That's what you call prices.  Today the prices start at $4.00
-                                and up for one x-acto knife.
-                            </MudText>
-                        </MudStack>
-                    </MudStack>
-                </MudButton>
-            </MudStack>
-            
-        
-        
-            <MudStack>
-                <MudButton @onclick="() => OpenDialogAsync(35)">
-                    <MudImage loading="lazy" Src="35.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.body1">
-                    Instruction sheet, cropped to size.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Things to do with your x-acto knives and tools.
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Original wooden box of x-acto knifes. Survived all those years and more to go.
-                </MudText>
-            </MudStack>
-        
-        
-            <MudStack>
-                <MudText Typo="Typo.h1">
-                    Carving knifes
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    Some additional tools that she used. Metal files, poker-knife and even a sharp screwdriver.
-                </MudText>
-                <MudStack >
-                    <MudButton @onclick="() => OpenDialogAsync(36.1)">
-                        <MudImage loading="lazy" Width="800" Style="max-width: 50%" Src="36.1.webp" Class="m-auto"></MudImage>
-                    </MudButton>
-                    <MudButton @onclick="() => OpenDialogAsync(36.2)">
-                        <MudImage loading="lazy" Width="800" Style="max-width: 50%" Src="36.2.webp" Class="m-auto"></MudImage>
-                    </MudButton>
                 </MudStack>
-                <MudText Typo="Typo.body1">
-                    Carving Knifes still as good as new and very sharp. Used on all the woodwork she did.
-                </MudText>
-            </MudStack>
-        
-        
+            </MudButton>
+            <MudButton @onclick="() => OpenDialogAsync(9)">
+                <MudStack AlignItems="AlignItems.Start">
+                    <MudImage loading="lazy" Width="500" Style="width: 500px; max-width: 50%" Src="2.2.webp"
+                              Class="m-auto"></MudImage>
+                    <MudStack>
+                        <MudText Typo="Typo.h2" Align="Align.Left">Her Medium</MudText>
+                        <MudText Typo="Typo.body1" Align="Align.Left">
+                            She used many different mediums, such as poker-works, wood-sculpturing, oils, copper,
+                            tin
+                            acrylics on canvas and water colors . She believes that working in a single medium was
+                            restrictive to her artistic process.
+                        </MudText>
+                    </MudStack>
+                </MudStack>
+            </MudButton>
+            <MudButton @onclick="() => OpenDialogAsync(12)">
+                <MudStack>
+                    <MudImage loading="lazy" Width="500" Style="max-width: 50%" Src="2.3.webp"
+                              Class="m-auto"></MudImage>
+                    <MudStack>
+                        <MudText Typo="Typo.h2" Align="Align.Left">Her Inspiration</MudText>
+                        <MudText Typo="Typo.body1" Align="Align.Left">
+                            She enjoyed her art. Some of her inspiration came from visions in frosted windows,
+                            trees,
+                            flowers and her beliefs, which she would replicate them into paintings.
+                        </MudText>
+                    </MudStack>
+                </MudStack>
+            </MudButton>
+        </MudStack>
+
+
+        <MudStack>
+            <MudText Typo="Typo.h1">Background</MudText>
+            <MudButton @onclick="() => OpenDialogAsync(3)">
+                <MudImage loading="lazy" Src="3.webp" Style="max-height: 60%; max-width: 40%" Class="m-auto"></MudImage>
+            </MudButton>
+            <MudText Typo="Typo.h2">Self portrait when she was 25 years old - water colours</MudText>
+            <MudText Typo="Typo.body1">
+                Mrs. Elena Kokline has exhibited at the following places:
+                <br/>
+                <ul>
+                    <li>Palais Montcalm - Québec city - December 1971</li>
+                    <li>West Africa - Sénégal - January 1974</li>
+                    <li>Glebe centre - Ottawa - March 1976</li>
+                </ul>
+            </MudText>
+        </MudStack>
+
+
+        <MudStack>
+            <MudButton @onclick="() => OpenDialogAsync(4)">
+                <MudImage loading="lazy" Src="4.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
+            </MudButton>
+            <MudText Typo="Typo.subtitle1">Graduation day</MudText>
+            <MudText Typo="Typo.h2">History</MudText>
+            <MudText Typo="Typo.body1">
+                <ul>
+                    <li>Born in Lithuanie - Kaunas - 1923</li>
+                    <li>Spoke 7 languages</li>
+                    <li>February 1949, she got married to a Doctor who majored in chemistry/physics and graduated
+                        from the Catholic University of Louvain
+                    </li>
+                    <li>Together they immigrated to Canada in 1951</li>
+                    <li>They had 5 children. All girls have inherited the artistic flare</li>
+                </ul>
+            </MudText>
+        </MudStack>
+
+
+        <MudStack>
+            <MudText Typo="Typo.h1">Portfolio - History</MudText>
+            <MudButton @onclick="() => OpenDialogAsync(5)">
+                <MudImage loading="lazy" Src="5.webp" Style="max-width: 66%" Class="m-auto"></MudImage>
+            </MudButton>
+            <MudText Typo="Typo.body2">
+                "Mme Elèna Kokline et sa dernière toile qui symbolise ses amours et ses impression du Sénégal: le
+                baobab, le soleil l'antilope et la biche sculptée. En observan bien les branches du baobab vous
+                decouvriez les tête d'antilopes et de biches qu'une main parfois étreint. Cette main est cell de
+                l'artiste." — <b>News paper clipping, 1974</b>
+            </MudText>
+        </MudStack>
+
+
+        <MudStack>
+            <MudButton @onclick="() => OpenDialogAsync(6)">
+                <MudImage loading="lazy" Src="6.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
+            </MudButton>
+            <MudText Typo="Typo.body1">
+                Diploma - Ville de Brusxelles. Academie royale des beaux-arts et école des arts décoratifs. Was
+                awarded to her by the Burgomaster of the City of Brussels in 1949.
+            </MudText>
+        </MudStack>
+
+
+        <MudStack>
+            <MudButton @onclick="() => OpenDialogAsync(7)">
+                <MudImage loading="lazy" Src="7.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
+            </MudButton>
+            <MudText Typo="Typo.body2">
+                "The works of a Neo-Canadian artist - Article read as: Mrs. Elena Kokline a Neo-Canadian artist who
+                only recently exhibited her latest works at the Palais Montcalm. Having studied at Brusels "Academie
+                Royal des beaux Arts". She has been residing in Quebec since 1951, and thus, has had her stylish and
+                decorative works - most symbolic - before the public for some 20 years. She excels in poker-works,
+                wood-sculpturing, oils, copper tin and water-colors." — <b>News paper clipping, 1971</b>
+            </MudText>
+        </MudStack>
+
+        @foreach (var painting in Data.Paintings)
+        {
             <MudStack>
-                <MudText Typo="Typo.h1">
-                    Embossed tools
-                </MudText>
-                <MudButton @onclick="() => OpenDialogAsync(37)">
-                    <MudImage loading="lazy" Style="max-width: 50%" Src="37.webp" Class="m-auto"></MudImage>
-                </MudButton>
-                <MudText Typo="Typo.body1">
-                    These are the tools that she used, when she used the push-back method on copper and tin. 
-                </MudText>
-                <MudText Typo="Typo.body1">
-                    I say push-back because it took a lot of energy pushing the copper or tin on a semi-soft surface for
-                    every detail and definition to protrude without going through the copper or tin. 
-                </MudText>
+                <SectionPainting Painting="@painting"/>
             </MudStack>
-        
-        
+        }
+
+        <MudStack>
+            <MudText Typo="Typo.h1">Tools</MudText>
+            <MudButton @onclick="() => OpenDialogAsync(34.1)">
+                <MudStack>
+                    <MudImage loading="lazy" Width="500" Style="max-width: 50%" Src="34.1.webp"
+                              Class="m-auto"></MudImage>
+                    <MudStack>
+                        <MudText Typo="Typo.h2" Align="Align.Left">X-acto knifes and tools</MudText>
+                        <MudText Typo="Typo.body1" Align="Align.Left">
+                            The tools used by my mom when she was creating her artwork. Many hours spent using those
+                            tools and no injuries ... well none that I knew of.
+                        </MudText>
+                    </MudStack>
+                </MudStack>
+            </MudButton>
+            <MudButton @onclick="() => OpenDialogAsync(34.2)">
+                <MudStack AlignItems="AlignItems.Start">
+                    <MudImage loading="lazy" Width="500" Style="width: 500px; max-width: 50%" Src="34.2.webp"
+                              Class="m-auto"></MudImage>
+                    <MudStack>
+                        <MudText Typo="Typo.h2" Align="Align.Left">Price list in 1956</MudText>
+                        <MudText Typo="Typo.body1" Align="Align.Left">
+                            Back in the good old days! That's what you call prices.  Today the prices start at $4.00
+                            and up for one x-acto knife.
+                        </MudText>
+                    </MudStack>
+                </MudStack>
+            </MudButton>
+        </MudStack>
+
+
+        <MudStack>
+            <MudButton @onclick="() => OpenDialogAsync(35)">
+                <MudImage loading="lazy" Src="35.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
+            </MudButton>
+            <MudText Typo="Typo.body1">
+                Instruction sheet, cropped to size.
+            </MudText>
+            <MudText Typo="Typo.body1">
+                Things to do with your x-acto knives and tools.
+            </MudText>
+            <MudText Typo="Typo.body1">
+                Original wooden box of x-acto knifes. Survived all those years and more to go.
+            </MudText>
+        </MudStack>
+
+
+        <MudStack>
+            <MudText Typo="Typo.h1">
+                Carving knifes
+            </MudText>
+            <MudText Typo="Typo.body1">
+                Some additional tools that she used. Metal files, poker-knife and even a sharp screwdriver.
+            </MudText>
             <MudStack>
-                <MudText Typo="Typo.h2">No longer available</MudText>
-                <MudButton @onclick="() => OpenDialogAsync(38.1)">
-                    <MudImage loading="lazy" Src="38.1.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
+                <MudButton @onclick="() => OpenDialogAsync(36.1)">
+                    <MudImage loading="lazy" Width="800" Style="max-width: 50%" Src="36.1.webp"
+                              Class="m-auto"></MudImage>
                 </MudButton>
-                <MudButton @onclick="() => OpenDialogAsync(38.2)">
-                    <MudImage loading="lazy" Src="38.2.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
+                <MudButton @onclick="() => OpenDialogAsync(36.2)">
+                    <MudImage loading="lazy" Width="800" Style="max-width: 50%" Src="36.2.webp"
+                              Class="m-auto"></MudImage>
                 </MudButton>
-                <MudText Typo="Typo.subtitle1" Align="Align.Center">Querelle / Quarrel</MudText>
             </MudStack>
-        
+            <MudText Typo="Typo.body1">
+                Carving Knifes still as good as new and very sharp. Used on all the woodwork she did.
+            </MudText>
+        </MudStack>
+
+
+        <MudStack>
+            <MudText Typo="Typo.h1">
+                Embossed tools
+            </MudText>
+            <MudButton @onclick="() => OpenDialogAsync(37)">
+                <MudImage loading="lazy" Style="max-width: 50%" Src="37.webp" Class="m-auto"></MudImage>
+            </MudButton>
+            <MudText Typo="Typo.body1">
+                These are the tools that she used, when she used the push-back method on copper and tin. 
+            </MudText>
+            <MudText Typo="Typo.body1">
+                I say push-back because it took a lot of energy pushing the copper or tin on a semi-soft surface for
+                every detail and definition to protrude without going through the copper or tin. 
+            </MudText>
+        </MudStack>
+
+
+        <MudStack>
+            <MudText Typo="Typo.h2">No longer available</MudText>
+            <MudButton @onclick="() => OpenDialogAsync(38.1)">
+                <MudImage loading="lazy" Src="38.1.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
+            </MudButton>
+            <MudButton @onclick="() => OpenDialogAsync(38.2)">
+                <MudImage loading="lazy" Src="38.2.webp" Style="max-width: 50%" Class="m-auto"></MudImage>
+            </MudButton>
+            <MudText Typo="Typo.subtitle1" Align="Align.Center">Querelle / Quarrel</MudText>
+        </MudStack>
+
     </MudStack>
 </MudContainer>
 
