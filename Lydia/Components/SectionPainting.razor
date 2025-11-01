@@ -33,10 +33,10 @@
         var options = new DialogOptions { FullScreen = true, CloseButton = true, CloseOnEscapeKey = true };
 
         var painting = Data.Paintings.First(a => a.Order == Painting.Order);
-        
+
         await Js.InvokeVoidAsync("urlHelper.setUrl", $"/{painting.Key}");
-        
+
         await DialogService.ShowAsync<InquireImageCarouselDialog>("", parameters, options);
     }
-    
+
 }

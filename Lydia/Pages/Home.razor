@@ -21,28 +21,28 @@
     protected override void OnAfterRender(bool firstRender)
     {
         base.OnAfterRender(firstRender);
-        
+
         Console.WriteLine(Painting);
 
-        if (String.IsNullOrEmpty(Painting)) return;
-        
+        if (string.IsNullOrEmpty(Painting)) return;
+
         Console.WriteLine("1");
-        
+
         var painting = Data.Paintings.FirstOrDefault(a => a.Key == Painting);
 
         if (painting == null) return;
-        
+
         Console.WriteLine("2");
-        
+
         var parameters = new DialogParameters<InquireImageCarouselDialog>
         {
             { x => x.Painting, painting }
         };
 
         var options = new DialogOptions { FullScreen = true, CloseButton = true, CloseOnEscapeKey = true };
-        
+
         Console.WriteLine("3");
-        
+
         DialogService.ShowAsync<InquireImageCarouselDialog>("", parameters, options);
     }
 
@@ -60,4 +60,5 @@
 
         return DialogService.ShowAsync<InquireImageCarouselDialog>("", parameters, options);
     }
+
 }
