@@ -152,24 +152,28 @@
     </DialogContent>
 </MudDialog>
 
-@foreach (var painting in Data.Paintings)
-{
-    @if (painting.Order == selectedIndex + 7 && selectedIndex != 0)
+<MudHidden Breakpoint="Breakpoint.MdAndUp">
+
+    @foreach (var painting in Data.Paintings)
     {
-        @if (painting.Available)
+        @if (painting.Order == selectedIndex + 7 && selectedIndex != 0)
         {
-            <a href="@MailToLink" style="width: calc(100% - 16px); position: absolute; bottom: 8px; left: 8px;">
-                <MudButton
-                    Variant="Variant.Filled"
-                    Color="Color.Primary"
-                    FullWidth="true"
-                    EndIcon="@Icons.Material.Filled.ContactSupport">
-                    Inquire
-                </MudButton>
-            </a>
+            @if (painting.Available)
+            {
+                <a href="@MailToLink" style="width: calc(100% - 16px); position: absolute; bottom: 8px; left: 8px;">
+                    <MudButton
+                        Variant="Variant.Filled"
+                        Color="Color.Primary"
+                        FullWidth="true"
+                        EndIcon="@Icons.Material.Filled.ContactSupport">
+                        Inquire
+                    </MudButton>
+                </a>
+            }
         }
     }
-}
+
+</MudHidden>
 
 
 @code {
