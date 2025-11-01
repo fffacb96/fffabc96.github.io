@@ -262,6 +262,6 @@
     string Message => $"Hello Lydia, \n\nI wish to inquire about painting(s): \"{Data.Paintings.FirstOrDefault(a => a.Order == selectedIndex + 7)?.Name}\"... \n\nIn the Elena Kokline collection.";
 
     string MailToLink =>
-        $"mailto:jonmcc.0723@gmail.com?subject=Art%20Inquiry&body={Uri.EscapeDataString(Message)}";
+        $"mailto:lkokline@gmail.com?subject=Art%20Inquiry&body={Uri.EscapeDataString(Message)}";
 
 }
