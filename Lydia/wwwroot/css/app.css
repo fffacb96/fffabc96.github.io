@@ -1,5 +1,7 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 h1:focus {
@@ -71,6 +73,7 @@ a, .btn-link {
     width: 8rem;
     height: 8rem;
     margin: 20vh auto 1rem auto;
+    will-change: transform;
 }
 
 .loading-progress circle {
@@ -101,7 +104,6 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
-
 
 @media (max-width: 480px) {
     .x-container.max.width {
