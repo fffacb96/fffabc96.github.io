@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; url=./index.html" />
+</head>
+<body>
+<p>Redirecting...</p>
+<script>
+    // Preserve full path for Blazor routing
+    var redirectTo = window.location.pathname;
+    if (redirectTo && redirectTo !== "/") {
+        sessionStorage.setItem("redirect", redirectTo);
+    }
+    window.location.replace("/");
+</script>
+</body>
+</html>
