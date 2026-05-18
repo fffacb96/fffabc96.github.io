@@ -3,8 +3,24 @@
 @using Lydia.Data
 
 @inject IDialogService DialogService
+@inject NavigationManager Navigation
 
 <PageTitle>Elena Kokline</PageTitle>
+
+<HeadContent>
+    @if (!string.IsNullOrEmpty(Painting))
+    {
+        var p = Data.Paintings.FirstOrDefault(a => a.Key == Painting);
+        if (p != null)
+        {
+            <meta name='description' content='@($"{p.Name} — {p.Size}")' />
+            <link rel='canonical' href='@($"{Navigation.BaseUri}{p.Key}")' />
+            <meta property='og:title' content='@p.Name' />
+            <meta property='og:description' content='@p.Descriptions.Replace("\n", " ").Replace("\r", "")' />
+            <meta property='og:image' content='@($"{Navigation.BaseUri}images/{p.File}")' />
+        }
+    }
+</HeadContent>
 
 <MudHidden Breakpoint="Breakpoint.MdAndDown">
     <Wide></Wide>
