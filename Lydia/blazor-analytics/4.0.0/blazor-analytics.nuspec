@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Blazor-Analytics</id>
+    <version>4.0.0</version>
+    <title>Blazor Analytics</title>
+    <authors>isc30</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <description>Blazor extensions for Analytics. Supported platforms: Google Analytics, GTAG, ...</description>
+    <copyright>Ivan Sanz Carasa (isc30)</copyright>
+    <tags>blazor google analytics gtag extensions razor components</tags>
+    <repository type="git" url="https://github.com/isc30/blazor-analytics" branch="master" commit="1096d26d0024fa8b500888b9c4dfff5f5b9a95fd" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.AspNetCore.Components" version="3.1.8" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Components.Web" version="3.1.8" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <contentFiles>
+      <files include="any/netstandard2.0/wwwroot/blazor-analytics.js" buildAction="Content" />
+    </contentFiles>
+  </metadata>
+</package>
