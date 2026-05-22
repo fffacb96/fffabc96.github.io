@@ -1,60 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elena Kokline | Copper, Tin, Wood and Canvas Art</title>
-    <meta content="This site is dedicated to my lovely mother, Elena Kokline, who had an artistic flare, she passed away in 2018. There's much to see here. Her love for art."
-          name="description">
-    <meta content="Elena Kokline, copper art, tin art, wood art, canvas art" name="keywords">
-    <meta content="xJcM397YsS45SWR4aNhPdArFqWn88eK2uWiHJg82CuQ" name="google-site-verification"/>
-    <link href="favicon.webp" rel="icon" type="image/webp"/>
-    <link href="favicon.png" rel="icon fallback" type="image/png"/>
-    <link href="manifest.webmanifest" rel="manifest"/>
-    <link href="icon-512.webp" rel="apple-touch-icon" sizes="512x512" type="image/webp"/>
-    <link href="icon-512.png" rel="apple-touch-icon fallback" sizes="512x512" type="image/png"/>
-    <link href="icon-192.webp" rel="apple-touch-icon" sizes="192x192" type="image/webp"/>
-    <link href="icon-192.png" rel="apple-touch-icon fallback" sizes="192x192" type="image/png"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/app.css" rel="stylesheet"/>
-    <link href="Lydia.styles.css" rel="stylesheet"/>
-    <link href="_content/MudBlazor/MudBlazor.min.css?v=@(MudBlazor.Metadata.Version)" rel="stylesheet"/>
-    <script>
-        const redirect = sessionStorage.getItem("redirect");
-        if (redirect) {
-            sessionStorage.removeItem("redirect");
-            history.replaceState(null, "", redirect);
-        }
-    </script>
+    <meta name="description" content="Elena Kokline art portfolio. Explore copper, tin, wood and canvas artwork." />
+    <meta name="keywords" content="Elena Kokline, copper art, tin art, wood art, canvas art" />
+    <meta name="google-site-verification" content="xJcM397YsS45SWR4aNhPdArFqWn88eK2uWiHJg82CuQ" />
+    <link rel="canonical" href="/" />
+    <meta property="og:title" content="Elena Kokline" />
+    <meta property="og:description" content="Copper, Tin, Wood and Canvas Art" />
+
+    <!-- Icons -->
+    <link href="favicon.webp" rel="icon" type="image/webp" />
+    <link href="favicon.png" rel="icon fallback" type="image/png" />
+    <link href="manifest.webmanifest" rel="manifest" />
+    <link href="icon-512.webp" rel="apple-touch-icon" sizes="512x512" type="image/webp" />
+    <link href="icon-512.png" rel="apple-touch-icon fallback" sizes="512x512" type="image/png" />
+    <link href="icon-192.webp" rel="apple-touch-icon" sizes="192x192" type="image/webp" />
+    <link href="icon-192.png" rel="apple-touch-icon fallback" sizes="192x192" type="image/png" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
 </head>
-
 <body>
-<div id="app">
-    <svg class="loading-progress">
-        <circle cx="50%" cy="50%" r="40%"/>
-        <circle cx="50%" cy="50%" r="40%"/>
-    </svg>
-    <div class="loading-progress-text"></div>
-</div>
+    <div id="app">
+        <div class="page">
+            <main>
+                <h1 style="position: absolute; left: -9999px; overflow: hidden;">Elena Kokline | Copper, Tin, Wood and Canvas Art</h1>
+                <article class="content px-4" id="main-content">
+                    <!-- Content will be loaded here by app.js -->
+                </article>
+            </main>
+        </div>
+    </div>
 
-<div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a class="reload" href="">Reload</a>
-    <a class="dismiss">🗙</a>
-</div>
-<script src="_framework/blazor.webassembly.js"></script>
-<script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js').catch(err => console.info('Service Worker registration skipped:', err));
-    }
-</script>
-<script src="_content/MudBlazor/MudBlazor.min.js?v=@(MudBlazor.Metadata.Version)" defer></script>
-<script src="_content/Blazor-Analytics/blazor-analytics.js" defer></script>
-<script src="js/urlHelper.js" defer></script>
-<script src="js/scrollHelper.js" defer></script>
+    <!-- Painting data embedded as JSON -->
+    <script type="application/json" id="paintings-data">
+    [
+        {
+            "order": 8,
+            "key": "grows-but-does-not-age",
+            "available": true,
+            "file": "8.webp",
+            "name": "Grandit, mais ne viellit pas / Grows But Does Not Age",
+            "size": "Original size: 18 x 24",
+            "description": "The painting was painted in 1971 on canvas using acrylic paint. If looked closely enough you can see areas that are highly emphasized, for definition.\n\nThis monument was dedicated in memory of Quebec Labour Minister <strong>Pierre Laporte</strong> who was kidnapped and murdered by the FLQ (Front de libération du Québec), back in 1970."
+        },
+        {
+            "order": 9,
+            "key": "mother-the-flourishing-palm-of-old-age",
+            "file": "9.webp",
+            "available": true,
+            "name": "Mère la palme florissante de la vieillesse / Mother the flourishing palm of old age",
+            "size": "Original size: 18 x 24",
+            "description": "Was painted in 1974 in Thiès. Painted on canvas, using acrylic paints.\n\nPainting representing that the mother is aging gracefully as the palm tree. Her strength, her hard work, in the midst of a hot sun and surrounded by palm trees that also nourish our planet."
+        },
+        {
+            "order": 10,
+            "key": "tulip",
+            "file": "10.webp",
+            "available": true,
+            "name": "Tulipe / Tulip",
+            "size": "Original size: 18 x 24",
+            "description": "Painted in 1971. On canvas using acrylic paints.\n\nWhen looking into a tulip you see the anther and the filament - the stems. That look just as graceful and delicate like a family of beautiful swans."
+        },
+        {
+            "order": 11,
+            "key": "mother",
+            "file": "11.webp",
+            "available": true,
+            "name": "Maman / Mother",
+            "size": "Original size: 18 x 24",
+            "description": "This painting was painted in December 1973. Painted on canvas using acrylic paints.\n\nThe inspiration came from a frosted window, where she saw an adult head, tears and a babies head, held close to the chest. Hens the name \"Maman\"."
+        },
+        {
+            "order": 12,
+            "key": "at-the-end-of-the-island",
+            "file": "12.webp",
+            "available": true,
+            "name": "Au bout de l'île / At the end of the island",
+            "size": "Original size: 11 x 15",
+            "description": "Carved and painted in 1954. This painting was carved into wood and painted with oil colours. Then varnished to preserve a soft glow for a partly reflective surface.\n\nInspired by a trip to Îles-de-la-Madeleine at the Gulf of Saint Lawrence. Very pretty with its red cliffs and its many caves dug by the sea."
+        },
+        {
+            "order": 13,
+            "key": "friendship",
+            "file": "13.webp",
+            "available": true,
+            "name": "Amitié / Friendship",
+            "size": "Original size: 12.5 x 8.5",
+            "description": "Painted on red wood in 1975. Carved and oil painted on red wood. Finished with a varnish to preserve a soft glow for a partly reflective surface.\n\nThis is a symbol of friendship between two countries. The Canadian flag and the flag of Sénégal. A friendship never forgotten."
+        },
+        {
+            "order": 14,
+            "key": "snowdrops",
+            "file": "14.webp",
+            "available": true,
+            "name": "Perce-neige / Snowdrops",
+            "size": "Original size: 4.5 x 6",
+            "description": "Pyrography in 1960. Used a wood burning tool and carving knifes. Painted with oil colours and finished with a varnish to preserve a soft glow for a partly reflective surface.\n\nOne of first flowers to bloom in spring, they often symbolize new beginnings, hope, and overcome challenges. Having 5 girls was a challenge"
+        },
+        {
+            "order": 15,
+            "key": "daffodil",
+            "file": "15.webp",
+            "available": true,
+            "name": "Jonquille / Daffodil",
+            "size": "Original size: 5.5 x 7",
+            "description": "Pyrography in 1960. Used a wood burning tool and carving knifes. Painted with oil colours and finished with a varnish to preserve a soft glow for a partly reflective surface.\n\nInspired by natures beauty daffodils and pussy willows emerge in spring for Easter blessings."
+        },
+        {
+            "order": 16,
+            "key": "the-sunflowers",
+            "file": "16.webp",
+            "available": true,
+            "name": "Les tournesols / The sunflowers",
+            "size": "Original size: 11\"",
+            "description": "Carved on wood in 1955. Frame of a plate. Painted with oil colours and lightly varnished.\n\nShe always like sunflowers and would plant them in her garden."
+        },
+        {
+            "order": 17,
+            "key": "decorative-plate",
+            "file": "17.webp",
+            "available": true,
+            "name": "Assiette décorative / Decorative plate",
+            "size": "Original size: 10\"",
+            "description": "Carved on wood in 1955. Frame of a plate is carved using carving knives followed by pyrography, delicately burning wood. Painted with oil colours and lightly varnished."
+        },
+        {
+            "order": 18,
+            "key": "lithuanien-plate",
+            "file": "18.webp",
+            "available": true,
+            "name": "Assiette Lithuanienne / Lithuanien Plate",
+            "size": "Original size: 12\"",
+            "description": "Carved on wood in 1955. Frame of a plate is sanded down to give a wavy surface, followed by pyrography, delicately burning wood. Painted with oil colours and lightly varnished.\n\nThe colours she used are symbolic to the Lithuanian flag, yellow, green, and red."
+        },
+        {
+            "order": 19,
+            "key": "three-pansies",
+            "file": "19.webp",
+            "available": true,
+            "name": "Trois pensée / Three pansies",
+            "size": "Original size: 11\"",
+            "description": "Carved on wood in 1955. Frame of a plate is sanded down to give a wavy surface, followed by carving the details. Painted with oil colours and lightly varnished.\n\nShe liked her flowers and would grow them in her garden. She was very thoughtful."
+        },
+        {
+            "order": 20,
+            "key": "night",
+            "file": "20.webp",
+            "available": true,
+            "name": "Nocturne / Night",
+            "size": "Original size: 16 x 20",
+            "description": "Copper year 1967. Push-back method used on copper. The back of the painting is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in. Varnished to preserve a shine.\n\nThree laddies sitting on a rock, basking in the moonlight ocean to cool from the hot summer nights."
+        },
+        {
+            "order": 21,
+            "key": "young-girl-with-braids",
+            "file": "21.webp",
+            "available": true,
+            "name": "Jeune fille aux tresses / Young girl with braids",
+            "size": "Original size: 11 x 18",
+            "description": "Portrait made back in 1964. Push-back method used on copper. The back of the painting is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in.\n\nI am pretty sure it was a self portrait when she was younger as she did wear braids. Then again so did her girls."
+        },
+        {
+            "order": 22,
+            "key": "koutchoum",
+            "file": "22.webp",
+            "available": true,
+            "name": "Koutchoum",
+            "size": "Original size: 15 x 19",
+            "description": "Painting was done in 1964.\n\nPush-back method used on copper. The back of the painting is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in. Lots of detail was put in.\n\nHer beloved German shepherd when he passed away, she made a portrait of him, to never be forgotten."
+        },
+        {
+            "order": 23,
+            "key": "annunciation",
+            "file": "23.webp",
+            "available": true,
+            "name": "Annonciation / Annunciation",
+            "size": "Original size: 15 x 19",
+            "description": "Painting was done in 1967.\n\nPush-back method used on copper. The back of the painting is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in.\n\nThe announcement of the Incarnation by the angel Gabriel to virgin Mary."
+        },
+        {
+            "order": 24,
+            "key": "andersens-tale",
+            "file": "24.webp",
+            "available": true,
+            "name": "Conte d'andersen / Andersen's Tale",
+            "size": "Original size: 18 x 18",
+            "description": "Painting was done in 1961.\n\nPush-back method used on tin. The back is filed with wax. Which was heated then poured onto the tin. Preventing the painting to cave in.\n\nIt's a story of a princess who rescues her 11 brothers from a spell cast by an evil queen. In this case she shows 5 swans representing her 5 girls."
+        },
+        {
+            "order": 25,
+            "key": "dancers",
+            "file": "25.webp",
+            "available": true,
+            "name": "Danseuses / Dancers",
+            "size": "Original size: 11 x 15",
+            "description": "Painting was done in 1961.\n\nPush-back method used on copper. The back of the painting is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in.\n\nThree dancing gypsies. Gypsy dance is, dynamic and entertaining. Russian folk dance dated back around the 19th century."
+        },
+        {
+            "order": 26,
+            "key": "fountain-of-youth",
+            "file": "26.webp",
+            "available": true,
+            "name": "Fontaine de jouvence / Fountain of Youth",
+            "size": "Original size: 11 x 15",
+            "description": "Year 1961. Push-back method used on copper. The back is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in. Dark areas are blackened with black oxide, then varnished to preserve a shine on some areas.\n\n<a class=\"btn-link\" href=\"https://en.wikipedia.org/wiki/Fountain_of_Youth\">Mythical fountain</a> allegedly restores the youth to anyone who baths in it."
+        },
+        {
+            "order": 27,
+            "key": "quadriga",
+            "file": "27.webp",
+            "available": true,
+            "name": "Quadrigue / Quadriga",
+            "size": "Original size: 11 x 11",
+            "description": "Year 1961. Push-back method used on copper. The back is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in. Dark areas are blackened with black oxide, then varnished to preserve a shine on some areas.\n\nHistorically famous for the Brandenburg gate quadriga, 4 majestic horses."
+        },
+        {
+            "order": 28,
+            "key": "maple-leaves",
+            "file": "28.webp",
+            "available": true,
+            "name": "Feuilles d'Erable / Maple leaves",
+            "size": "Original size: 11 x 12",
+            "description": "Year 1960.  Push-back method used on copper. The back of the painting is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in.  Dark areas are blackened with black oxide, then varnished to preserve a shine on surfaced areas.\n\nSymbolic to the beauty of maple leaves."
+        },
+        {
+            "order": 29,
+            "key": "princess-javakha",
+            "file": "29.webp",
+            "available": true,
+            "name": "Princesse Javakha / Princess Javakha",
+            "size": "Original size: 11 x 14",
+            "description": "Year 1960.  Push-back method used on copper. The back is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in.  Dark areas are blackened with black oxide, then varnished to preserve a shine on surfaced areas.\n\nFolk tale. Princess Javakha escaping her rivals on a horse."
+        },
+        {
+            "order": 30,
+            "key": "loreley",
+            "file": "30.webp",
+            "available": true,
+            "name": "Loreley / Loreley",
+            "size": "Original size: 18 x 15",
+            "description": "Year 1963.  Push-back method used on copper. The back is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in.  Dark areas are blackened with black oxide, then varnished to preserve a shine on surfaced areas.\n\nThe beautiful <a class=\"btn-link\" href=\"https://visitworldheritage.com/en/eu/the-loreley-rock/7b9a0bb3-18b3-44da-907e-e9861d3f831b\">siren</a>/mermaid whose songs enchanted passing sailors."
+        },
+        {
+            "order": 31,
+            "key": "hummingbirds",
+            "file": "31.webp",
+            "available": true,
+            "name": "Colibris / Hummingbirds",
+            "size": "Original size: 15 x 19",
+            "description": "Year 1961. Push-back method used on copper. The back is filled with wax. Which was heated then poured onto the copper. Preventing the painting to cave in.  Dark areas are blackened with black oxide, then varnished to preserve a shine on surfaced areas.\n\nInspiring sign of hope & good luck. The spirit of a loved one is nearby."
+        },
+        {
+            "order": 32,
+            "key": "our-lady-of-perpetual-help",
+            "file": "32.webp",
+            "available": true,
+            "name": "Notre-Dame du Perpétuel Secours / Our Lady of Perpetual Help",
+            "size": "Original size: 21 x 27",
+            "description": "Copper year 1962 - Tin 1971. Push-back method used on both. The back is filled with wax. Which was heated then poured onto the copper and tin. Preventing the painting to cave in.  Dark areas are blackened with black oxide, then varnished to preserve a shine on surfaced areas.\n\n<a class=\"btn-link\" href=\"https://en.wikipedia.org/wiki/Our_Lady_of_Perpetual_Help\">Mother of God holding the Divine Child</a>"
+        }
+    ]
+    </script>
 
+    <!-- Dialog for image carousel/gallery -->
+    <dialog id="image-dialog" class="image-dialog">
+        <div class="dialog-content">
+            <button class="dialog-close" aria-label="Close dialog" onclick="closeImageDialog()">&times;</button>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-slides" id="carousel-slides">
+                        <!-- Carousel items will be inserted here -->
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn carousel-prev" onclick="carouselPrev()" aria-label="Previous image">❮</button>
+                    <button class="carousel-btn carousel-next" onclick="carouselNext()" aria-label="Next image">❯</button>
+                </div>
+            </div>
+            <div class="carousel-info" id="carousel-info"></div>
+            <button class="inquire-btn" id="inquire-button" style="display:none;">Inquire</button>
+        </div>
+    </dialog>
+
+    <!-- Dialog for contact form -->
+    <dialog id="contact-dialog" class="contact-dialog">
+        <div class="dialog-content">
+            <button class="dialog-close" aria-label="Close dialog" onclick="closeContactDialog()">&times;</button>
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+                <h2>Inquiry</h2>
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required maxlength="100" placeholder="Art Inquiry" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com" />
+                </div>
+                <div class="form-group">
+                    <label for="body">Inquiry *</label>
+                    <textarea id="body" name="body" required minlength="4" maxlength="12000" rows="10" placeholder="Your painting inquiry..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/urlHelper.js"></script>
+    <script src="js/scrollHelper.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Google Analytics (minimal, non-Blazor) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8RXPFTJQRP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8RXPFTJQRP');
+    </script>
 </body>
-
 </html>

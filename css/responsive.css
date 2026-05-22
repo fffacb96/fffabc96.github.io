@@ -1,0 +1,371 @@
+/* Responsive CSS - Mobile and Desktop Breakpoints */
+
+/* ===== Breakpoints ===== */
+/* Mobile: < 960px (MudBlazor md breakpoint) */
+/* Desktop: >= 960px */
+
+/* ===== Mobile First (Default) ===== */
+
+/* Stack layouts for mobile (vertical) */
+.row-flex {
+    flex-direction: column;
+}
+
+.carousel-info {
+    font-size: 0.875rem;
+}
+
+.carousel-info h2 {
+    font-size: 1.25rem;
+}
+
+.carousel-btn {
+    padding: 8px 12px;
+    font-size: 16px;
+}
+
+.dialog-close {
+    font-size: 28px;
+    right: 10px;
+}
+
+/* Mobile form adjustments */
+.contact-dialog .dialog-content {
+    padding: 30px 20px;
+}
+
+.contact-dialog {
+    width: 95%;
+    max-width: 100%;
+}
+
+/* Mobile image sizes */
+.carousel-slide img {
+    max-height: 60vh;
+}
+
+/* Mobile typography adjustments */
+h1 {
+    font-size: 1.75rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+/* Smaller padding on mobile */
+.mud-paper {
+    margin: 4px !important;
+}
+
+.pa-16 {
+    padding: 12px !important;
+}
+
+/* Mobile spacing */
+.mud-stack {
+    gap: 12px;
+}
+
+/* Hidden on mobile by default (for desktop-only sections) */
+.hidden-mobile {
+    display: none !important;
+}
+
+/* Show on mobile */
+.visible-mobile {
+    display: block !important;
+}
+
+/* ===== Tablet and Desktop (>= 960px) ===== */
+@media (min-width: 960px) {
+    /* Row layouts for desktop (horizontal) */
+    .row-flex {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .row-flex > div:first-child {
+        flex: 0 0 50%;
+    }
+
+    .row-flex > div:last-child {
+        flex: 1 1 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .stack-column {
+        padding-left: 20px;
+    }
+
+    /* Carousel adjustments for larger screens */
+    .carousel-info {
+        font-size: 1rem;
+        padding: 30px;
+    }
+
+    .carousel-info h2 {
+        font-size: 1.65rem;
+    }
+
+    .carousel-controls {
+        bottom: 30px;
+        gap: 30px;
+    }
+
+    .carousel-btn {
+        padding: 12px 20px;
+        font-size: 20px;
+    }
+
+    /* Desktop form */
+    .contact-dialog {
+        width: 800px;
+    }
+
+    .contact-dialog .dialog-content {
+        padding: 40px;
+    }
+
+    /* Image sizing for desktop carousel */
+    .carousel-slide img {
+        max-height: 85vh;
+    }
+
+    /* Desktop typography */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.65rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Increase padding on desktop */
+    .pa-16 {
+        padding: 16px !important;
+    }
+
+    .mud-stack {
+        gap: 16px;
+    }
+
+    .mud-paper {
+        margin: 2px !important;
+    }
+
+    /* Hidden on desktop */
+    .hidden-desktop {
+        display: none !important;
+    }
+
+    /* Show on desktop */
+    .visible-desktop {
+        display: block !important;
+    }
+
+    /* Max width container */
+    .mud-container {
+        max-width: 1200px;
+    }
+}
+
+/* ===== Large Desktop (>= 1440px) ===== */
+@media (min-width: 1440px) {
+    .mud-container {
+        max-width: 1400px;
+    }
+
+    .carousel-controls {
+        bottom: 40px;
+        gap: 40px;
+    }
+
+    .carousel-info {
+        padding: 40px;
+    }
+}
+
+/* ===== Small Mobile (< 480px) ===== */
+@media (max-width: 480px) {
+    .mud-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .mud-paper {
+        border-radius: 0;
+        margin: 0 !important;
+        box-shadow: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .pa-16 {
+        padding: 8px !important;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .carousel-slide img {
+        max-height: 50vh;
+    }
+
+    .carousel-controls {
+        bottom: 10px;
+        gap: 10px;
+    }
+
+    .carousel-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .contact-dialog {
+        width: 98%;
+    }
+
+    .contact-dialog .dialog-content {
+        padding: 20px;
+    }
+
+    .dialog-close {
+        font-size: 24px;
+        right: 5px;
+        top: 5px;
+    }
+
+    .inquire-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        margin: 10px;
+    }
+}
+
+/* ===== Tablet (481px - 959px) ===== */
+@media (min-width: 481px) and (max-width: 959px) {
+    .mud-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .pa-16 {
+        padding: 14px !important;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    .carousel-slide img {
+        max-height: 65vh;
+    }
+
+    .row-flex {
+        flex-direction: column;
+    }
+
+    .stack-column {
+        padding-left: 0;
+    }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    dialog {
+        display: none !important;
+    }
+
+    .carousel-controls,
+    .dialog-close,
+    .inquire-btn,
+    .gallery-button {
+        display: none !important;
+    }
+
+    .mud-paper {
+        page-break-inside: avoid;
+    }
+}
+
+/* ===== Dark Mode Support (optional) ===== */
+@media (prefers-color-scheme: dark) {
+    .contact-dialog {
+        background: #1e1e1e;
+        color: #e0e0e0;
+    }
+
+    .contact-dialog .dialog-content {
+        background: #1e1e1e;
+    }
+
+    .contact-dialog form h2 {
+        color: #e0e0e0;
+    }
+
+    .form-group label {
+        color: #e0e0e0;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        background-color: #2d2d2d;
+        color: #e0e0e0;
+        border-color: #444;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: #1b6ec2;
+    }
+}
+
+/* ===== High Contrast Mode Support ===== */
+@media (prefers-contrast: more) {
+    .carousel-btn {
+        border-width: 3px;
+    }
+
+    .dialog-close {
+        border: 2px solid currentColor;
+        border-radius: 4px;
+    }
+
+    .btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* ===== Reduced Motion Support ===== */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-slide {
+        transition: none;
+    }
+
+    .dialog-close,
+    .carousel-btn,
+    .btn,
+    .form-group input,
+    .form-group textarea {
+        transition: none;
+    }
+}
